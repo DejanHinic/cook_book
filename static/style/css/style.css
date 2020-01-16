@@ -1,3 +1,10 @@
 nav {
     background-color: #28b4b3;
 }
+th {
+    font-size: 25px;
+}
+#table_border {
+    border-top-style: solid;
+    border-bottom-style: solid;
+}

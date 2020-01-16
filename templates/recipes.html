@@ -4,15 +4,15 @@
         <div class="row">
             <div class="col s6">
             {% for recipe in recipes %}
-                <h1><u>{{recipe.recipe_name}}</u></h1>
+                <h1>{{recipe.recipe_name}}</h1>
                 <br>
                 <p>{{recipe.recipe_description}}</p>
-                <table>
+                <table id="table_border">
                     <thead>
                     <tr>
-                        <th>Serves</th>
-                        <th>Prep Time</th>
-                        <th>Cook Time</th>
+                        <th><i class="small material-icons">group</i>Serves</th>
+                        <th><i class="small material-icons">access_time</i>Prep Time</th>
+                        <th><i class="small material-icons">access_time</i>Cook Time</th>
                     </tr>
                     </thead>
 
@@ -25,9 +25,9 @@
                     </tbody>               
                     <thead>
                     <tr>
-                        <th>Calories</td>
-                        <th>Cuisine</td>
-                        <th>Food Type</td>
+                        <th><i class="small material-icons">fireplace</i>Calories</td>
+                        <th><i class="small material-icons">flag</i>Cuisine</td>
+                        <th><i class="small material-icons">restaurant</i>Food Type</td>
                     </tr>
                     </thead>
                     <tbody>

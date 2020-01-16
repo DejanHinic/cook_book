@@ -15,6 +15,9 @@ def get_tasks():
     return render_template("recipes.html", 
                            recipes=mongo.db.recipes.find())
 
+@app.route('/add_recipe')
+def add_task():
+    return render_template('add_recipe.html')
 
 
 if __name__ == '__main__':
