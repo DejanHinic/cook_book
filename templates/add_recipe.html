@@ -1,67 +1,115 @@
 {% extends 'base.html'%} {% block content %}
-<br>
-<div class="row">
-    <form class="col s12">
-      <div class="row">
-        <div class="input-field col s6">
-          <input id="recipe_title" type="text" class="validate">
-          <label for="recipe_title">Recipe Title</label>
-        </div>
-        <div class="input-field col s6">
-          <input id="recipe_description" type="text" class="validate">
-          <label for="recipe_description">Recipe Description</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s6">
-          <input placeholder="1234 mins" id="cook_time" type="text" class="validate">
-          <label for="cook_time">Cook Time</label>
-        </div>
-        <div class="input-field col s6">
-          <input placeholder="1234 mins" id="prep_time" type="text" class="validate">
-          <label for="prep_time">Prep Time</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s6">
-          <input placeholder="1, 2, 3 ... persons" id="serves" type="text" class="validate">
-          <label for="serves">Serves</label>
-        </div>
-        <div class="input-field col s6">
-          <input placeholder="pasta, ramen, risotto etc." id="food_type" type="text" class="validate">
-          <label for="food_type">Food Type</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s6">
-          <input placeholder="Italian, Croatian, Irish etc." id="cuisine" type="text" class="validate">
-          <label for="cuisine">Cuisine</label>
-        </div>
-        <div class="input-field col s6">
-          <input placeholder="1234 cals" id="calories" type="text" class="validate">
-          <label for="calories">Calories</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s6">
-          <input id="recipe_title" type="text" class="validate">
-          <label for="recipe_title">Recipe Title</label>
-        </div>
-        <div class="input-field col s6">
-          <input id="prep_time" type="text" class="validate">
-          <label for="prep_time">Prep Time</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s6">
-          <input id="recipe_title" type="text" class="validate">
-          <label for="recipe_title">Recipe Title</label>
-        </div>
-        <div class="input-field col s6">
-          <input id="prep_time" type="text" class="validate">
-          <label for="prep_time">Prep Time</label>
-        </div>
-      </div>                  
-    </form>
+<div class="row" id="add_recipe_title">
+    <h1>Add Your Recipe</h1>
 </div>
+<br>
+<div class="container" id="add_recipe_main">
+    <div class="row">
+        <form class="col s12">
+        <div class="row">
+            <div class="input-field col s6">
+            <i class="material-icons prefix">title</i>
+            <input id="recipe_title" type="text" class="validate">
+            <label for="recipe_title">Recipe Title</label>
+            </div>
+            <div class="input-field col s6">
+            <i class="small material-icons prefix">description</i>
+            <input id="recipe_description" type="text" class="validate">
+            <label for="recipe_description">Recipe Description</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s6">
+            <i class="small material-icons prefix">access_time</i>
+            <input placeholder="1234 mins" id="cook_time" type="text" class="validate">
+            <label for="cook_time">Cook Time</label>
+            </div>
+            <div class="input-field col s6">
+            <i class="small material-icons prefix">access_time</i>
+            <input placeholder="1234 mins" id="prep_time" type="text" class="validate">
+            <label for="prep_time">Prep Time</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s6">
+            <i class="small material-icons prefix">group</i>
+            <input placeholder="1, 2, 3 ... persons" id="serves" type="text" class="validate">
+            <label for="serves">Serves</label>
+            </div>
+            <div class="input-field col s6">
+            <i class="small material-icons prefix">fastfood</i>
+            <input placeholder="pasta, ramen, risotto etc." id="food_type" type="text" class="validate">
+            <label for="food_type">Food Type</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s6">
+            <i class="small material-icons prefix">flag</i>
+            <input placeholder="Italian, Croatian, Irish etc." id="cuisine" type="text" class="validate">
+            <label for="cuisine">Cuisine</label>
+            </div>
+            <div class="input-field col s6">
+            <i class="small material-icons prefix">whatshot</i>
+            <input placeholder="1234 cals" id="calories" type="text" class="validate">
+            <label for="calories">Calories</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s6">
+            <i class="small material-icons prefix">playlist_add</i>
+                         <select multiple>
+                            <option value="" disabled selected>Select Allergens</option>
+                            <option value="1">Gluten</option>
+                            <option value="2">Crustaceans</option>
+                            <option value="3">Eggs</option>
+                            <option value="4">Fish</option>
+                            <option value="5">Peanuts</option>
+                            <option value="6">Soybeans</option>
+                            <option value="7">Milk</option>
+                            <option value="8">Nuts</option>
+                            <option value="9">Celery</option>
+                            <option value="10">Mustard</option>
+                            <option value="11">Sesame seeds</option>
+                            <option value="12">Sulphur dioxide and sulphites</option>
+                            <option value="13">Lupin</option>
+                            <option value="14">Molluscs</option>
+                        </select>
+                            <label>Allergens</label>
+            </div>
+            <div class="input-field col s6">
+            <i class="small material-icons prefix">publish</i>
+            <input placeholder="paste your URL here" id="upload_image" type="text" class="validate">
+            <label for="upload_image">Upload Image</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s10">
+                <i class="small material-icons prefix">list</i>
+                <input placeholder="please enter next step" id="directions" type="text" class="validate">
+                <label for="directions">Directions</label>
+            </div>
+            <div class="input-field col s2">
+                <a class="btn-floating btn-small waves-effect waves-light red"><i class="material-icons">add</i></a>
+                <a class="btn-floating btn-small waves-effect waves-light red"><i class="material-icons">remove</i></a>
+            </div>
+        </div>   
+        <div class="row">
+            <div class="input-field col s10">
+                <i class="small material-icons prefix">shopping_basket</i>
+                <input id="ingredients" type="text" class="validate">
+                <label for="ingredients">Ingredients</label>
+            </div>
+            <div class="input-field col s2">
+            <a class="btn-floating btn-small waves-effect waves-light red"><i class="material-icons">add</i></a>
+            <a class="btn-floating btn-small waves-effect waves-light red"><i class="material-icons">remove</i></a>
+            </div>
+        </div>                  
+        </form>
+    </div>
+    <div class="row">
+         
+        <div class="col-md-4 offset-md-4"><a class="waves-effect waves-light btn-large" id="add_button">Add Recipe</a></div>               
+    </div> 
+</div>    
+
 {% endblock %}

@@ -8,3 +8,15 @@ th {
     border-top-style: solid;
     border-bottom-style: solid;
 }
+#add_recipe_title {
+    text-align: center;
+}
+.page-footer {
+    background-color: #28b4b3;
+}
+#add_button {
+   float: right;
+}
+#add_recipe_main {
+    margin-bottom: 80px;
+}
