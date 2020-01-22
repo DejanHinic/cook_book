@@ -20,3 +20,8 @@ th {
 #add_recipe_main {
     margin-bottom: 80px;
 }
+
+.modal {
+    
+    height: 80vh;;
+}

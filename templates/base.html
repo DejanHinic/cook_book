@@ -10,6 +10,26 @@
     <link rel="stylesheet" href="{{url_for('static', filename='/style/css/style.css')}}" type="text/css"/>
 </head>
 <body>
+        <div id="modals">
+            <div id="log_in" class="modal">
+                <div class="modal-content">
+                <h4>Log In</h4>
+                <p>A bunch of text</p>
+                </div>
+                <div class="modal-footer">
+                <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+                </div>
+            </div>
+            <div id="sign_up" class="modal">
+                <div class="modal-content">
+                <h4>Sign Up</h4>
+                <p>A bunch of text</p>
+                </div>
+                <div class="modal-footer">
+                <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+                </div>
+            </div>
+        </div>
     <header>
          <nav>
              <nav>
@@ -21,16 +41,16 @@
                         <li><a href="">Recipes</a></li>
                         <li><a href="">Add Recipe</a></li>
                         <li><a href="">Kitchen Tools</a></li>
-                        <li><a href="">Log In</a></li>
-                        <li><a href="">Sign Up</a></li>
+                        <li><a class="waves-effect waves-light btn modal-trigger" href="#log_in">Log In</a></li>
+                        <li><a class="waves-effect waves-light btn modal-trigger" href="#sign_up">Sign Up</a></li>
                     </ul>
                     <ul class="side-nav" id="mobile-demo">
                         <li><a href="">Home</a></li>
                         <li><a href="">Recipes</a></li>
                         <li><a href="">Add Recipe</a></li>
                         <li><a href="">Kitchen Tools</a></li>
-                        <li><a href="">Log In</a></li>
-                        <li><a href="">Sign Up</a></li>
+                        <li><a class="waves-effect waves-light btn modal-trigger" href="#log_in">Log In</a></li>
+                        <li><a class="waves-effect waves-light btn modal-trigger" href="#sign_up">Sign Up</a></li>
                     </ul>
                 </div>
             </nav>
@@ -75,6 +95,9 @@
                 $('select').material_select();
                 $(".button-collapse").sideNav();  
                 $('.carousel.carousel-slider').carousel({fullWidth: true});
+                $('.modal').modal();
+                $('#modal1').modal('open');
+                $('#modal1').modal('close');
             });  
            
         </script>
