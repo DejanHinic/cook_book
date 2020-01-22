@@ -1,6 +1,7 @@
 import os
+import math
 from flask import Flask, render_template, redirect, request, url_for
-from flask_pymongo import PyMongo
+from flask_pymongo import PyMongo, pymongo
 from bson.objectid import ObjectId 
 
 app = Flask(__name__)
@@ -11,16 +12,17 @@ mongo = PyMongo(app)
 
 @app.route('/')
 
-@app.route('/view_recipe/<recipe_id>', methods=["GET"])
-def view_task(recipe_id):
-    recipe_id = ObjectId,
-    recipe = mongo.db.recipes
-    recipe.view( {'_id': ObjectId(recipe_id)},
-    {
-        'recipe_title':request.form.get('recipe_title'),
-        'recipe_description': request.form.get('recipe_description'),
-    })
-    return redirect(url_for('get_recipes'))
+def index():
+    # Pagination function
+    page_limit = 6
+    current_page = int(request.args.get('current_page', 1))
+    total = mongo.db.Recipes.count()
+    pages = range(1, int(math.ceil(total / page_limit)) + 1)
+    recipes = mongo.db.recipes.find().sort('_id', pymongo.DESCENDING).skip(
+                            (current_page - 1)*page_limit).limit(page_limit)
+
+    return render_template("index.html", recipe=recipes, pages=pages,
+                           current_page=current_page)
 
 @app.route('/get_recipes')
 def get_recipes():

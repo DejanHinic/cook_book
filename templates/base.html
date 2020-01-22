@@ -14,17 +14,23 @@
          <nav>
              <nav>
                 <div class="nav-wrapper">
-                    <a href="" class="brand-logo">Task Manager</a>
+                    <a href="" class="brand-logo">Nom Nom <span>cook book</span></a>
                     <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
                     <ul id="nav-mobile" class="right hide-on-med-and-down">
                         <li><a href="">Home</a></li>
-                        <li><a href="">New Task</a></li>
-                        <li><a href="">Manage Categories</a></li>
+                        <li><a href="">Recipes</a></li>
+                        <li><a href="">Add Recipe</a></li>
+                        <li><a href="">Kitchen Tools</a></li>
+                        <li><a href="">Log In</a></li>
+                        <li><a href="">Sign Up</a></li>
                     </ul>
                     <ul class="side-nav" id="mobile-demo">
                         <li><a href="">Home</a></li>
-                        <li><a href="">New Task</a></li>
-                        <li><a href="">Manage Categories</a></li>
+                        <li><a href="">Recipes</a></li>
+                        <li><a href="">Add Recipe</a></li>
+                        <li><a href="">Kitchen Tools</a></li>
+                        <li><a href="">Log In</a></li>
+                        <li><a href="">Sign Up</a></li>
                     </ul>
                 </div>
             </nav>
@@ -67,7 +73,8 @@
             $(document).ready(function(){
                 $('.collapsible').collapsible();
                 $('select').material_select();
-                $(".button-collapse").sideNav();            
+                $(".button-collapse").sideNav();  
+                $('.carousel.carousel-slider').carousel({fullWidth: true});
             });  
            
         </script>
