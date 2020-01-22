@@ -10,6 +10,18 @@ mongo = PyMongo(app)
 
 
 @app.route('/')
+
+@app.route('/view_recipe/<recipe_id>', methods=["GET"])
+def view_task(recipe_id):
+    recipe_id = ObjectId,
+    recipe = mongo.db.recipes
+    recipe.view( {'_id': ObjectId(recipe_id)},
+    {
+        'recipe_title':request.form.get('recipe_title'),
+        'recipe_description': request.form.get('recipe_description'),
+    })
+    return redirect(url_for('get_recipes'))
+
 @app.route('/get_recipes')
 def get_recipes():
     return render_template("recipes.html", 
