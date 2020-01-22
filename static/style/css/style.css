@@ -23,5 +23,14 @@ th {
 
 .modal {
     
-    height: 80vh;;
+    padding: 0;
+    max-height: 80vh;
+}
+.img-fluid {
+    height: fit-content;
+    margin: 0;
+    padding: 0;
+}
+.row {
+    margin-bottom: 0;
 }
