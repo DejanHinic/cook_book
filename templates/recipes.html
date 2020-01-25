@@ -9,6 +9,28 @@
                         <div class="card-body">
                             <h5 class="card-title">{{recipe.recipe_name}}</h5>
                             <p class="card-text">{{recipe.recipe_description}}</p>
+                            <table class="table">
+                                <tbody>
+                                    <tr>
+                                        <th scope="row"><i class="small material-icons prefix">access_time</i></th>
+                                        <td>{{recipe.prep_time}}</td>
+                                        <th scope="row"><i class="small material-icons prefix">access_time</i></th>
+                                        <td>{{recipe.cook_time}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><i class="small material-icons prefix">flag</i></th>
+                                        <td>{{recipe.cuisine}}</td>
+                                        <th scope="row"><i class="small material-icons prefix">fastfood</i></th>
+                                        <td>{{recipe.food_type}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><i class="small material-icons prefix">group</i></th>
+                                        <td>{{recipe.serves}}</td>
+                                        <th scope="row"><i class="small material-icons prefix">whatshot</i></th>
+                                        <td>{{recipe.calories}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
