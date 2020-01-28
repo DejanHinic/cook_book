@@ -1,10 +1,12 @@
 {% extends 'base.html'%} {% block content %}
-    
-    <div class="container-fluid">
-        {% for recipe in recipes %}
-            <div class="row row-cols-1 row-cols-md-3">
-                <div class="col mb-4">
-                    <div class="card">
+<div class="container">
+    <div class="row col md-4">
+        
+            {% for recipe in recipes %}
+        
+            
+                
+                    <div class="card text-center" style="width: 25rem; margin: 15px;">
                             <img src={{recipe.upload_image}} class="card-img-top" alt="Responsive img">
                         <div class="card-body">
                             <h5 class="card-title">{{recipe.recipe_name}}</h5>
@@ -36,10 +38,11 @@
                             </button>   
                         </div>
                     </div>
-                </div>
-            </div>
-        {% endfor %}
+                
+            
+        
+            {% endfor %}
+       
     </div>
-    
-
+ </div>
 {% endblock %}
