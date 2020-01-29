@@ -7,8 +7,15 @@ from bson.objectid import ObjectId
 app = Flask(__name__)
 app.config["MONGO_DBNAME"] = 'cook_book'
 app.config["MONGO_URI"] = os.getenv('MONGO_URI', 'mongodb+srv://root:0t0rin0laring0l0gija@myfirstcluster-ol1er.mongodb.net/cook_book?retryWrites=true&w=majority')
+app.config['SECRET_KEY'] = os.urandom(24)
 mongo = PyMongo(app)
 
+""" Variables """
+users = mongo.db.users
+recipes = mongo.db.recipes
+cuisines = mongo.db.cuisines
+dishes = mongo.db.dishes
+allergens = mongo.db.allergens
 
 @app.route('/')
 
@@ -38,6 +45,13 @@ def insert_recipe():
     recipe = mongo.db.recipes
     recipe.insert_one(request.form.to_dict())
     return redirect(url_for('get_recipes'))
+
+
+@app.route('/the_recipe/<recipe_id>/<recipe_title>')
+def the_recipe(recipe_id, recipe_title):
+    return render_template("the_recipe.html",
+            recipe=recipes.find_one({'_id': ObjectId(recipe_id),
+            'recipe_title': recipe_title}))
 
 
 if __name__ == '__main__':

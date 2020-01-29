@@ -9,7 +9,7 @@
                     <div class="card text-center" style="width: 25rem; margin: 15px;">
                             <img src={{recipe.upload_image}} class="card-img-top" alt="Responsive img">
                         <div class="card-body">
-                            <h5 class="card-title">{{recipe.recipe_name}}</h5>
+                            <h5 class="card-title">{{recipe.recipe_title}}</h5>
                             <p class="card-text">{{recipe.recipe_description}}</p>
                             <table class="table">
                                 <tbody>
@@ -33,9 +33,8 @@
                                     </tr>
                                 </tbody>
                             </table>
-                            <button class="btn waves-effect waves-light" type="submit" name="action">See Full Recipe
-                                <i class="material-icons right">playlist_add</i>
-                            </button>   
+
+                            <a href="{{url_for('the_recipe', recipe_id = recipe._id, recipe_title = recipe.recipe_title)}}" class="btn btn-recipe-card">View this recipe <i class="material-icons right">chevron_right</i></a>
                         </div>
                     </div>
                 
