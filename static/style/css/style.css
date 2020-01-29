@@ -34,3 +34,6 @@ th {
 .row {
     margin-bottom: 0;
 }
+i.small {
+    vertical-align: text-bottom;
+}

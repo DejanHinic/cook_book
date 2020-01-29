@@ -1,14 +1,45 @@
 {% extends 'base.html'%} {% block content %}
-<div class="container">
-    <div class="row col md-4">
-        
-            
-                            <h5 class="card-title">{{recipe.recipe_title}}</h5>
-                            <p class="card-text">{{recipe.recipe_description}}</p>
-                            
-        
+            <div class="container">  
+        <div class="row">
+            <div class="col s6">
            
-       
+                <h1>{{recipe.recipe_title}}</h1>
+                <br>
+                <h3>{{recipe.recipe_description}}</h3>
+                <table class="table">
+                                <tbody>
+                                    <tr>
+                                        
+                                        <th scope="row"><i class="small material-icons prefix">access_time</i>  Prep Time > {{recipe.prep_time}}</th>
+                                        
+                                        <th scope="row"><i class="small material-icons prefix">access_time</i>  Cook Time > {{recipe.cook_time}}</th>
+                                        
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><i class="small material-icons prefix">flag</i>  Cuisine > {{recipe.cuisine}}</th>
+                                        
+                                        <th scope="row"><i class="small material-icons prefix">fastfood</i>  Food Type > {{recipe.food_type}}</th>
+                                        
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><i class="small material-icons prefix">group</i>  Serves > {{recipe.serves}}</th>
+                                        
+                                        <th scope="row"><i class="small material-icons prefix">whatshot</i>  Calories > {{recipe.calories}}</th>
+                                        
+                                    </tr>
+                                </tbody>
+                            </table>
+            </div>
+           
+            <div class="col s6">
+                <img class="materialboxed" width="650" src="{{recipe.upload_image}}">
+            </div>
+        </div>
+        <div class="row">
+           
+            
+                    
+        </div>
     </div>
- </div>
+
 {% endblock %}
