@@ -116,7 +116,37 @@
                 $('.modal').modal();
                 $('#modal1').modal('open');
                 $('#modal1').modal('close');
-            });  
+
+                var delete_icon = '<i class="material-icons">delete</i></a></div></div>';
+                var ingredient_field = `<div class="row new-ingredient"> <div class="input-field col s10 m11">
+                        <input type="text" name="ingred" class="validate" required>
+                        <label>Ingredient(s)</label></div>
+                        <div class="col s2 m1"><a class="btn-floating waves-effect waves-light red" id="delete_ingredient"> 
+                        ${delete_icon}`;
+                var step_field = `<div class="row new-step"> <div class="input-field col s10 m11">
+                        <textarea name="steps" class="materialize-textarea" class="validate" required></textarea>
+                        <label>Step(s)</label></div>
+                        <div class="col s2 m1"><a class="btn-floating btn-small waves-effect waves-light red" id="delete_step"> 
+                        ${delete_icon}`;
+            
+                // add and remove ingredient
+                $("#add_ingredient").click(function() {
+                    $("#ingredients").append(ingredient_field);
+                    Materialize.updateTextFields();
+                });
+                $("body").on("click","#delete_ingredient", function() {
+                    $(this).parents(".new-ingredient").remove();
+                });
+                
+                // add and remove step
+                $("#add_step").click(function() {
+                    $("#steps").append(step_field);
+                    Materialize.updateTextFields();
+                });
+                $("body").on("click","#delete_step", function() {
+                    $(this).parents(".new-step").remove();
+                });
+            }); 
            
         </script>
 </body>
