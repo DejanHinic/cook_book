@@ -12,8 +12,9 @@ mongo = PyMongo(app)
 
 """ Variables """
 users = mongo.db.users
+recipe = mongo.db.recipes
 recipes = mongo.db.recipes
-cuisines = mongo.db.cuisines
+cuisine = mongo.db.cuisine
 dishes = mongo.db.dishes
 allergens = mongo.db.allergens
 
@@ -57,6 +58,11 @@ def insert_recipe():
                        # Lists for Ingredients and Method to store in an array.
                        'upload_image': request.form['upload_image']})
     return redirect(url_for('get_recipes'))
+
+@app.route('/edit_recipe/<recipe_id>')
+def edit_recipe(recipe_id):
+    return render_template("edit_recipe.html", cuisine=cuisine.find(),
+            recipe=recipes.find_one({"_id": ObjectId(recipe_id)}))
 
 
 @app.route('/the_recipe/<recipe_id>/<recipe_title>')
