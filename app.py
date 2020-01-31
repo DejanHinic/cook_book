@@ -1,6 +1,6 @@
 import os
 import math
-from flask import Flask, render_template, redirect, request, url_for
+from flask import Flask, render_template, redirect, request, url_for, session
 from flask_pymongo import PyMongo, pymongo
 from bson.objectid import ObjectId 
 
