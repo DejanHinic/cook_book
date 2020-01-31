@@ -20,6 +20,12 @@ allergens = mongo.db.allergens
 
 @app.route('/')
 
+
+@app.route('/log_in')
+def signin():
+    signin = True
+    return render_template("index.html", log_in=log_in)
+
 def index():
     # Pagination function
     page_limit = 6
