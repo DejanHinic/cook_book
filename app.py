@@ -64,6 +64,28 @@ def edit_recipe(recipe_id):
     return render_template("edit_recipe.html", cuisine=cuisine.find(),
             recipe=recipes.find_one({"_id": ObjectId(recipe_id)}))
 
+""" Send form data to update recipe in MongoDB """
+@app.route('/update_recipe/<recipe_id>', methods=["POST"])
+def update_recipe(recipe_id):
+    recipes.update( {'_id': ObjectId(recipe_id)},
+        { 
+            '$set':{
+                'recipe_title':request.form.get('recipe_title'),
+                'recipe_description':request.form.get('recipe_description'),
+                'serves': request.form.get('serves'),
+                'food_type': request.form.get('food_type'),
+                'cuisine':request.form.get('cuisine'),
+                'calories':request.form.get('calories'),
+                'food_type':request.form.get('food_type'),
+                'cook_time':request.form.get('cook_time'),
+                'ingredients':request.form.getlist('ingredients'),
+                'steps':request.form.getlist('steps'),
+                'allergens':request.form.getlist('allergens'),
+                'upload_image':request.form.get('upload_image')
+            }
+        })
+    return redirect(url_for('get_recipes'))
+
 
 @app.route('/the_recipe/<recipe_id>/<recipe_title>')
 def the_recipe(recipe_id, recipe_title):

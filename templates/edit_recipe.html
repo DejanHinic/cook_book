@@ -5,7 +5,7 @@
 <br>
 <div class="container" id="add_recipe_main">
     <div class="row">
-        
+        <form action="{{url_for('update_recipe', recipe_id =recipe._id)}}" method="POST" class="recipe-form">
             <div class="row">
                 <div class="input-field col s6">
                     <i class="material-icons prefix">title</i>
@@ -112,9 +112,9 @@
             </div>
             <div class="row"> 
                 <div class="row">
-                <button class="col s12 btn medium-text waves-effect waves-light" type="submit">Save Recipe</button>
-            </div>         
-            </div> 
+                    <button class="col s12 btn medium-text waves-effect waves-light" type="submit">Save Recipe</button>
+                </div>
+            </div>
     </form>
 </div>    
 
