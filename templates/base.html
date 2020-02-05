@@ -57,11 +57,15 @@
                                 <label for="username1">Username</label>
                             </div>
                             <div class="input-field">
-                                <input placeholder="Enter password" id="password1" name="password" type="text" class="validate" required>
-                                <label for="password1">Password</label>
+                                <label for="exampleInputPassword1">Password</label>
+                                <input type="password" class="form-control" name="pass" placeholder="Password">
                             </div>
                             <button class="btn btn-spacing waves-effect waves-light" type="submit">Log In</button>
                         </form>
+                        <br>
+                        <div>
+                            Don't have an account? <a href="{{ url_for('register') }}">Sign up here</a>.
+                        </div>
                     
                         
                     
