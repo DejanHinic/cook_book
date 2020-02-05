@@ -1,5 +1,6 @@
 import os
 import math
+import bcrypt
 from flask import Flask, render_template, redirect, request, url_for, session
 from flask_pymongo import PyMongo, pymongo
 from bson.objectid import ObjectId 
@@ -20,34 +21,39 @@ allergens = mongo.db.allergens
 
 @app.route('/')
 def index():
+    if 'username' in session:
+        return 'You are logged in as ' + session['username']
+
     return render_template("index.html")
 
-""" Sign in tab active """
-@app.route('/log_in')
-def log_in():
-    log_in = True
-    return render_template("index.html", log_in=log_in)
-
-""" Sign up tab active """
-@app.route('/signup')
-def signup():
-    log_in = False
-    return render_template("index.html", log_in=log_in)
-
-@app.route('/register', methods=['POST'])
-def register():
+@app.route('/login', methods=['POST'])
+def login():
     users = mongo.db.users
-    users.insert_one({
-            'username': request.form["username"],
-            'fullname': request.form["fullname"],
-            'password': request.form["password"]
-        })
+    login_user = users.find_one({'name' : request.form['username']})
+
+    if login_user:
+        if bcrypt.hashpw(request.form['pass'].encode('utf-8'), login_user['password'].encode('utf-8')) == login_user['password'].encode('utf-8'):
+            session['username'] = request.form['username']
+            return redirect(url_for('index'))
+
+    return 'Invalid username/password combination'
+
+@app.route('/register', methods=['POST', 'GET'])
+def register():
+    if request.method == 'POST':
+        users = mongo.db.users
+        existing_user = users.find_one({'name' : request.form['username']})
+
+        if existing_user is None:
+            hashpass = bcrypt.hashpw(request.form['pass'].encode('utf-8'), bcrypt.gensalt())
+            users.insert({'name' : request.form['username'], 'password' : hashpass})
+            session['username'] = request.form['username']
+            return redirect(url_for('index'))
         
-    return render_template('index.html')
-        
-    success = False    
-    return render_template('index.html', success=success)
- 
+        return 'That username already exists!'
+
+    return render_template('register.html')
+
 def index():
     # Pagination function
     page_limit = 6

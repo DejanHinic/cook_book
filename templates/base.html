@@ -12,14 +12,15 @@
 </head>
 <body>
         
-    <div class="container-fluid">
+
+<div class="container-fluid">
         <div id="sign_up" class="modal">
             <div class="row">
                 <div class="col s6">
                     <img src="/static/images/sign_in.jpg" class="img-fluid" alt="Responsive image">
                 </div>
                  <div id="sign-up" class="col s12 center">
-                        <form action="{{url_for('register')}}" method="POST">
+                        <form method=POST action="{{ url_for('register') }}">
                             <div class="input-field">
                                 <input placeholder="Enter your full name" id="fullname" name="fullname" type="text" class="validate" required>
                                 <label for="fullname">Full Name</label>
@@ -32,15 +33,13 @@
                                 <input placeholder="Enter password" id="password" name="password" type="text" class="validate" required>
                                 <label for="password">Password</label>
                             </div>
-                            <button class="btn btn-spacing waves-effect waves-light" type="submit">Sign Up</button>
+                            <button class="btn btn-spacing waves-effect waves-light" type="submit">Register</button>
                         </form>
                    
                     
                         
                     
-                    <div class="modal-footer">
-                        <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
-                    </div>
+                    
                 </div>
             </div>    
         </div>
@@ -52,7 +51,7 @@
                     <img src="/static/images/sign_in.jpg" class="img-fluid" alt="Responsive image">
                 </div>
                 <div id="sign-in" class="col s12 center">
-                        <form action="{{url_for('log_in')}}" method="POST">
+                        <form method=POST action="{{ url_for('login') }}">
                             <div class="input-field">
                                 <input placeholder="Enter username" id="username1" name="username" type="text" class="validate" required>
                                 <label for="username1">Username</label>
@@ -66,9 +65,7 @@
                     
                         
                     
-                    <div class="modal-footer">
-                        <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
-                    </div>
+                    
                 </div>
             </div>    
         </div>
@@ -84,15 +81,15 @@
                         <li><a href="{{url_for('get_recipes')}}">Recipes</a></li>
                         <li><a href="{{url_for('add_recipe')}}">Add Recipe</a></li>
                         <li><a href="">Kitchen Tools</a></li>
-                        <li><a class="waves-effect waves-light btn modal-trigger" href="#log_in">Log In</a></li>
-                        <li><a class="waves-effect waves-light btn modal-trigger" href="#sign_up">Sign Up</a></li>
+                        <li><a class="waves-effect waves-light btn modal-trigger" href='login'>Log In</a></li>
+                        <li><a class="waves-effect waves-light btn modal-trigger" href="register">Register</a></li>
                     </ul>
                     <ul class="side-nav" id="mobile-demo">
                         <li><a href="{{url_for('index')}}">Home</a></li>
                         <li><a href="{{url_for('get_recipes')}}">Recipes</a></li>
                         <li><a href="{{url_for('add_recipe')}}">Add Recipe</a></li>
                         <li><a href="">Kitchen Tools</a></li>
-                        <li><a class="waves-effect waves-light btn modal-trigger" href="#log_in">Log In</a></li>
+                        <li><a class="waves-effect waves-light btn modal-trigger" href="#login">Log In</a></li>
                         <li><a class="waves-effect waves-light btn modal-trigger" href="#sign_up">Sign Up</a></li>
                     </ul>
                 </div>

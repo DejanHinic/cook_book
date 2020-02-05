@@ -1,27 +1,26 @@
 {% extends 'base.html'%} {% block content %}
-    <div class="container-fluid">
-        <div class="carousel carousel-slider center" data-indicators="true">
-            <div class="carousel-fixed-item center">
-            <a class="btn waves-effect white grey-text darken-text-2">button</a>
-            </div>
-            <div class="carousel-item red white-text" href="https://www.bbcgoodfood.com/sites/default/files/recipe-collections/collection-image/2013/05/spaghetti-bolognese_2.jpg">
-            <h2>First Panel</h2>
-            <p class="white-text">This is your first panel</p>
-            </div>
-            <div class="carousel-item amber white-text" href="#two!">
-            <h2>Second Panel</h2>
-            <p class="white-text">This is your second panel</p>
-            </div>
-            <div class="carousel-item green white-text" href="#three!">
-            <h2>Third Panel</h2>
-            <p class="white-text">This is your third panel</p>
-            </div>
-            <div class="carousel-item blue white-text" href="#four!">
-            <h2>Fourth Panel</h2>
-            <p class="white-text">This is your fourth panel</p>
-            </div>
+<div class="container-fluid">   
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4">
+                <form method=POST action="{{ url_for('login') }}">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Username</label>
+                        <input type="text" class="form-control" name="username" placeholder="Username">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Password</label>
+                        <input type="password" class="form-control" name="pass" placeholder="Password">
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Log In</button>
+                </form>
+                <br>
+                <div>
+                    Don't have an account? <a href="{{ url_for('register') }}">Sign up here</a>.
+                </div>
         </div>
-        
+    </div>
+</div> 
 
     </div>
     <div class="container">
@@ -99,6 +98,6 @@
                 <li class="waves-effect"><a href="#!">5</a></li>
                 <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
             </ul>      
-    </div> 
+</div> 
 
 {% endblock %}
