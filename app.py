@@ -19,13 +19,35 @@ dishes = mongo.db.dishes
 allergens = mongo.db.allergens
 
 @app.route('/')
+def index():
+    return render_template("index.html")
 
-
+""" Sign in tab active """
 @app.route('/log_in')
-def signin():
-    signin = True
+def log_in():
+    log_in = True
     return render_template("index.html", log_in=log_in)
 
+""" Sign up tab active """
+@app.route('/signup')
+def signup():
+    log_in = False
+    return render_template("index.html", log_in=log_in)
+
+@app.route('/register', methods=['POST'])
+def register():
+    users = mongo.db.users
+    users.insert_one({
+            'username': request.form["username"],
+            'fullname': request.form["fullname"],
+            'password': request.form["password"]
+        })
+        
+    return render_template('index.html')
+        
+    success = False    
+    return render_template('index.html', success=success)
+ 
 def index():
     # Pagination function
     page_limit = 6

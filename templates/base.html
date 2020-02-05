@@ -13,15 +13,30 @@
 <body>
         
     <div class="container-fluid">
-        <div id="log_in" class="modal">
+        <div id="sign_up" class="modal">
             <div class="row">
                 <div class="col s6">
                     <img src="/static/images/sign_in.jpg" class="img-fluid" alt="Responsive image">
                 </div>
-                <div class="col s6">
+                 <div id="sign-up" class="col s12 center">
+                        <form action="{{url_for('register')}}" method="POST">
+                            <div class="input-field">
+                                <input placeholder="Enter your full name" id="fullname" name="fullname" type="text" class="validate" required>
+                                <label for="fullname">Full Name</label>
+                            </div>
+                            <div class="input-field">
+                                <input placeholder="Enter username" id="username" name="username" type="text" class="validate" required>
+                                <label for="username">Username</label>
+                            </div>
+                            <div class="input-field">
+                                <input placeholder="Enter password" id="password" name="password" type="text" class="validate" required>
+                                <label for="password">Password</label>
+                            </div>
+                            <button class="btn btn-spacing waves-effect waves-light" type="submit">Sign Up</button>
+                        </form>
+                   
                     
-                        <h4>Log In</h4>
-                        <p>A bunch of text</p>
+                        
                     
                     <div class="modal-footer">
                         <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
@@ -31,15 +46,25 @@
         </div>
     </div>  
     <div class="container-fluid">
-        <div id="sign_up" class="modal">
+        <div id="log_in" class="modal">
             <div class="row">
                 <div class="col s6">
                     <img src="/static/images/sign_in.jpg" class="img-fluid" alt="Responsive image">
                 </div>
-                <div class="col s6">
+                <div id="sign-in" class="col s12 center">
+                        <form action="{{url_for('log_in')}}" method="POST">
+                            <div class="input-field">
+                                <input placeholder="Enter username" id="username1" name="username" type="text" class="validate" required>
+                                <label for="username1">Username</label>
+                            </div>
+                            <div class="input-field">
+                                <input placeholder="Enter password" id="password1" name="password" type="text" class="validate" required>
+                                <label for="password1">Password</label>
+                            </div>
+                            <button class="btn btn-spacing waves-effect waves-light" type="submit">Log In</button>
+                        </form>
                     
-                        <h4>Sign Up</h4>
-                        <p>A bunch of text</p>
+                        
                     
                     <div class="modal-footer">
                         <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
