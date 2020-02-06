@@ -86,6 +86,7 @@ def insert_recipe():
                        'calories': request.form['calories'],
                        'food_type': request.form['food_type'],
                        'cook_time': request.form['cook_time'],
+                       'prep_time': request.form['prep_time'],
                        'ingredients': request.form.getlist('ingredients'),
                        'steps': request.form.getlist('steps'),
                        'allergens': request.form.getlist('allergens'),
