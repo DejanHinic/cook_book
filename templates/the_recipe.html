@@ -1,41 +1,95 @@
 {% extends 'base.html'%} {% block content %}
-    <div class="container">  
+<div class="container">
+    <div>
         <div class="row">
             <div class="col s6">
            
                 <h1>{{recipe.recipe_title}}</h1>
                 <br>
-                <h3>{{recipe.recipe_description}}</h3>
-                <table class="table">
-                                <tbody>
-                                    <tr>
+                <h4>{{recipe.recipe_description}}</h4>
+
+
+                <div class="recipe-details-container">
+                        <div class="recipe-details-item yields">    
+                                    		Serves:
+                                <br><span class="yields-amount">
+                                            {{recipe.serves}}           
+                                           
+                                </span></br>
+                        </div>
+
+                        <div class="recipe-details-item prep-time">
+                                    Prep Time:
+                                <br><span class="prep-time-amount">
+                                            {{recipe.prep_time}}
+                                       
+                                </br></span>
+                            
+                        </div>
+
+                        <div class="recipe-details-item total-time">
+                                            Cook Time:
+                                <br><span class="total-time-amount">           
+                                        {{recipe.cook_time}}
+                                    
+                                </br></span>
+                        </div>
+                </div>
+                <div class="recipe-details-container">
+                        <div class="recipe-details-item yields">    
+                                    		Cuisine:
+                                <br><span class="yields-amount">
+                                             {{recipe.cuisine}}          
+                                          
+                                </br></span>
+                        </div>
+
+                        <div class="recipe-details-item prep-time">
+                                    Food type:
+                                <br><span class="prep-time-amount">
+                                            {{recipe.food_type}}
                                         
-                                        <th scope="row"><i class="small material-icons prefix">access_time</i>  Prep Time > {{recipe.prep_time}}</th>
+                                </br></span>
+                           
+                        </div>
+
+                        <div class="recipe-details-item total-time">
+                                            Calories:
+                                <br><span class="total-time-amount">           
+                                        {{recipe.calories}}
+                                   
+                                </br></span>
+                        </div>
+                </div>
+
+        </div>
+            <div class="col s6">
+                <img id="recipe_img" src="{{recipe.upload_image}}">
+            </div>
+        </div>
+    </div>                    
+                                
+                                        
+                                      <!----  <th scope="row"><i class="small material-icons prefix">access_time</i>  Prep Time > {{recipe.prep_time}}</th>
                                         
                                         <th scope="row"><i class="small material-icons prefix">access_time</i>  Cook Time > {{recipe.cook_time}}</th>
                                         
-                                    </tr>
-                                    <tr>
+                                    
                                         <th scope="row"><i class="small material-icons prefix">flag</i>  Cuisine > {{recipe.cuisine}}</th>
                                         
                                         <th scope="row"><i class="small material-icons prefix">fastfood</i>  Food Type > {{recipe.food_type}}</th>
                                         
-                                    </tr>
-                                    <tr>
+                                    
                                         <th scope="row"><i class="small material-icons prefix">group</i>  Serves > {{recipe.serves}}</th>
                                         
-                                        <th scope="row"><i class="small material-icons prefix">whatshot</i>  Calories > {{recipe.calories}}</th>
-                                        
-                                    </tr>
-                                </tbody>
-                            </table>
-            </div>
+                                        <th scope="row"><i class="small material-icons prefix">whatshot</i>  Calories > {{recipe.calories}}</th> ----->      
+                                    
+             
 
-       
-            <div class="col s6">
-                <img class="materialboxed" width="650" src="{{recipe.upload_image}}">
-            </div>
-        </div>
+            
+            
+
+
 
          <ul class="collapsible" data-collapsible="accordion">
             <li>
@@ -74,5 +128,6 @@
             </div>
         </div>
     </div>
+</div>
 
 {% endblock %}

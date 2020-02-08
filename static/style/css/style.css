@@ -50,3 +50,78 @@ i.small {
 #cover-caption {
   width: 100%;
 }
+
+/*recipe profile style*/
+#recipe_img {
+      max-width: 100%;
+      height: 640px;
+      width: 860px;
+}
+#responsive-recipe-image {
+    max-width: 100%;
+    height: auto;
+}
+.recipe-details-container {
+    margin: 1.875rem 0;
+}
+.recipe-details-container {
+    display: -ms-grid;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(6.25rem,1fr));
+    grid-gap: .25rem;
+}
+.recipe-details-container {
+    border: .0625rem solid #000;
+    border-top: .625rem solid #008887;
+    padding: 0 .625rem;
+}
+.recipe-details-container .recipe-details-item:first-child {
+    padding-top: 1.875rem;
+}
+@media only screen and (min-width: 40.625rem)
+.recipe-details-container .recipe-details-item {
+    padding-top: 1.875rem;
+    border-right: .0625rem solid #000;
+    text-align: center;
+}
+.recipe-details-container .recipe-details-item {
+    font-weight: 700;
+    padding: 0 .625rem 1.875rem;
+}
+@media only screen and (min-width: 40.625rem)
+.recipe-details-container .recipe-details-item:last-child {
+    border-right: 0;
+}
+.yields-unit, .recipe-time-unit {
+    font-family: Helvetica,Arial,Sans-serif;
+    font-size: .8125rem;
+    line-height: 1.2;
+    color: #000;
+    font-weight: 400;
+    vertical-align: baseline;
+}
+.yields-unit {
+    vertical-align: middle;
+}
+.cal-per-serv-amount, .yields-amount, .prep-time-amount, .cook-time-amount, .total-time-amount {
+    font-family: Helvetica,Arial,Sans-serif;
+    font-size: 1.625rem;
+    line-height: 1.2;
+    color: #008887;
+    padding-top: .625rem;
+}
+@media only screen and (min-width: 40.625rem)
+.cal-per-serv-amount, .yields-amount, .prep-time-amount, .cook-time-amount, .total-time-amount {
+    display: block;
+}
+.recipe-details-container .recipe-details-item {
+    padding-top: 1.875rem;
+    border-right: .0625rem solid #000;
+    text-align: center;
+}
+.recipe-details-container .recipe-details-item:last-child {
+    border-right: 0;
+}
+.recipe-details-container .recipe-details-item:first-child {
+    padding-top: 1.875rem;
+}
