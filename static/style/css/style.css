@@ -38,7 +38,7 @@ i.small {
     vertical-align: text-bottom;
 }
 #cover {
-  background: #222 url('../img/stars.jpg') center center no-repeat;
+  background: #c6ffff;
   background-size: cover;
   color: white;
   height: 100%;

@@ -69,45 +69,24 @@
         </div>
     </div>                    
                                 
-                                        
-                                      <!----  <th scope="row"><i class="small material-icons prefix">access_time</i>  Prep Time > {{recipe.prep_time}}</th>
-                                        
-                                        <th scope="row"><i class="small material-icons prefix">access_time</i>  Cook Time > {{recipe.cook_time}}</th>
-                                        
-                                    
-                                        <th scope="row"><i class="small material-icons prefix">flag</i>  Cuisine > {{recipe.cuisine}}</th>
-                                        
-                                        <th scope="row"><i class="small material-icons prefix">fastfood</i>  Food Type > {{recipe.food_type}}</th>
-                                        
-                                    
-                                        <th scope="row"><i class="small material-icons prefix">group</i>  Serves > {{recipe.serves}}</th>
-                                        
-                                        <th scope="row"><i class="small material-icons prefix">whatshot</i>  Calories > {{recipe.calories}}</th> ----->      
-                                    
-             
-
-            
-            
-
-
-
+                                  
          <ul class="collapsible" data-collapsible="accordion">
             <li>
-                <div class="collapsible-header"><i class="material-icons">filter_drama</i>Steps</div>
+                <div class="collapsible-header"><i class="material-icons">list</i>Steps</div>
             {% for items in recipe.steps %} 
                 <div class="collapsible-body"><span>{{items}}</span></div>
             {% endfor %}
             </li>
             
             <li>        
-                <div class="collapsible-header"><i class="material-icons">place</i>Ingredients</div>
+                <div class="collapsible-header"><i class="material-icons">shopping_basket</i>Ingredients</div>
             {% for items in recipe.ingredients %}  
                 <div class="collapsible-body"><span>{{items}}</span></div>
             {% endfor %}
             </li>
            
             <li>
-            <div class="collapsible-header"><i class="material-icons">whatshot</i>Allergens</div>
+            <div class="collapsible-header"><i class="material-icons">warning</i>Allergens</div>
             {% for items in recipe.allergens %} 
                 <div class="collapsible-body"><span>{{items}}</span></div>
             {% endfor %}
@@ -123,7 +102,7 @@
         
             <div class="col s3 center">
                     <a href="{{url_for('delete_recipe', recipe_id = recipe._id)}}">
-                        <i class="material-icons icons red-text tooltipped " data-position="bottom" data-tooltip="Delete recipe">delete</i> </a>
+                        <i class="material-icons icons red-text tooltipped " data-position="bottom" data-tooltip="Delete recipe">delete_forever</i> </a>
                     <div class="grey-text text-darken-1">Delete</div>
             </div>
         </div>
