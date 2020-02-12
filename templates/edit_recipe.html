@@ -4,8 +4,8 @@
             <h1>Edit Your Recipe</h1>
         </div>
         <br>
-    <div class="row">
-        <form action="{{url_for('update_recipe', recipe_id =recipe._id)}}" method="POST" class="recipe-form">
+    
+    <form action="{{url_for('update_recipe', recipe_id =recipe._id)}}" method="POST" class="recipe-form">
             <div class="row">
                 <div class="input-field col s6">
                     <i class="material-icons prefix">title</i>
@@ -82,7 +82,9 @@
                     <label for="upload_image">Upload Image</label>
                 </div>
             </div>
-            <div class="row">
+                <div class="row">
+                    <div class="col s12 flow-text">Steps</div>
+                </div>
                     <div id="steps">
                     {% for item in recipe.steps %}
                         {% if item == recipe.steps[-1,100] %}
@@ -97,19 +99,19 @@
                                     </div>
                          </div>
                         {% else %}
-                        
+                        <div class="row new-step">
                                 <div class="input-field col s10 m11">
-                                    <textarea id="steps" name="steps" class="materialize-textarea" required>{{item}}</textarea>
+                                    <input type="text" id="steps" name="steps" class="validate" value="{{item}}" required>
                                     <label for="steps">Step(s)</label>
                                 </div>
-                                <div class="col s2 m1">
+                                <div class="col s1">
                                     <a class="btn-floating waves-effect waves-light red" id="delete_step"><i class="material-icons">delete</i></a>
                                 </div>
-                        
+                        </div>
                         {% endif %}
                     {% endfor %}
                      </div>
-             </div>
+             
             <div class="row">
                 <div class="col s12 flow-text">Ingredients</div>
             </div>
@@ -142,8 +144,8 @@
             <div class="row">
                 <button class="col s12 btn medium-text waves-effect waves-light" type="submit">Save Recipe</button>
              </div>
-        </form>
-    </div>  
+    </form>
+    
 </div>    
 
 {% endblock %}
