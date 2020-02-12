@@ -1,12 +1,19 @@
 nav {
     background-color: #28b4b3;
 }
+#login-jumbo{
+    margin: auto;
+}
 th {
     font-size: 25px;
 }
 #table_border {
     border-top-style: solid;
     border-bottom-style: solid;
+}
+/*recipe card tex align*/
+.table td, .table th {
+    vertical-align: 0;
 }
 #add_recipe_title {
     text-align: center;
