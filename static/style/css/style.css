@@ -1,8 +1,12 @@
 nav {
     background-color: #28b4b3;
 }
+/*index jumbotrons*/
 #login-jumbo{
     margin: auto;
+}
+#jumbo-top-margin {
+    margin-top: 40px;
 }
 th {
     font-size: 25px;
