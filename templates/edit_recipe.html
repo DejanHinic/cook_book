@@ -1,9 +1,9 @@
 {% extends 'base.html'%} {% block content %}
-<div class="row" id="add_recipe_title">
-    <h1>Edit Your Recipe</h1>
-</div>
-<br>
-<div class="container" id="add_recipe_main">
+<div class="container" id="add_recipe_main">   
+        <div class="row" id="add_recipe_title">
+            <h1>Edit Your Recipe</h1>
+        </div>
+        <br>
     <div class="row">
         <form action="{{url_for('update_recipe', recipe_id =recipe._id)}}" method="POST" class="recipe-form">
             <div class="row">
@@ -53,10 +53,10 @@
                     <input placeholder="1234 cals" id="calories" type="text" name="calories"value="{{recipe.calories}}">
                     <label for="calories">Calories</label>
                 </div>
-            </div>
+            </div>      
             <div class="row">
                 <div class="input-field col s6">
-                <i class="small material-icons prefix">playlist_add</i>
+                    <i class="small material-icons prefix">playlist_add</i>
                             <select multiple id="allergens" type="text" name="allergens">
                                 <option value="" disabled selected>Select Allergens</option>
                                 <option value="gluten">Gluten</option>
@@ -77,45 +77,73 @@
                                 <label for="allergens">Allergens</label>
                 </div>
                 <div class="input-field col s6">
-                <i class="small material-icons prefix">publish</i>
-                <input placeholder="paste your URL here" id="upload_image" type="text" name="upload_image">
-                <label for="upload_image">Upload Image</label>
+                    <i class="small material-icons prefix">publish</i>
+                    <input placeholder="paste your URL here" id="upload_image" type="text" name="upload_image" value="{{recipe.upload_image}}">
+                    <label for="upload_image">Upload Image</label>
                 </div>
             </div>
-                <div id="steps">
-                    <div class="row">
-                        <div class="input-field col s10">
-                            <i class="small material-icons prefix">list</i>
-                            <input placeholder="please enter next step" id="recipe_steps" type="text" name="steps">
-                            <label for="recipe_steps">Steps</label>
-                        </div>
-
-                            <div class="col s2 m1">
-                                <a class="btn-floating waves-effect waves-light waves-light red" id="add_step"><i class="material-icons">add</i></a>
-                            </div>
-
-                    </div>
-                </div>
+            <div class="row">
+                    <div id="steps">
+                    {% for item in recipe.steps %}
+                        {% if item == recipe.steps[-1,100] %}
+                        <div class="row">
+                                <div class="input-field col s10">
+                                    <i class="small material-icons prefix">list</i>
+                                    <input placeholder="please enter next step" id="recipe_steps" type="text" name="steps">
+                                    <label for="steps">Steps</label>
+                                </div>
+                                    <div class="col s2 m1">
+                                        <a class="btn-floating waves-effect waves-light waves-light red" id="add_step"><i class="material-icons">add</i></a>
+                                    </div>
+                         </div>
+                        {% else %}
+                        
+                                <div class="input-field col s10 m11">
+                                    <textarea id="steps" name="steps" class="materialize-textarea" required>{{item}}</textarea>
+                                    <label for="steps">Step(s)</label>
+                                </div>
+                                <div class="col s2 m1">
+                                    <a class="btn-floating waves-effect waves-light red" id="delete_step"><i class="material-icons">delete</i></a>
+                                </div>
+                        
+                        {% endif %}
+                    {% endfor %}
+                     </div>
+             </div>
+            <div class="row">
+                <div class="col s12 flow-text">Ingredients</div>
+            </div>
                 <div id="ingredients">
-                    <div class="row">
+                {% for item in recipe.ingredients %}
+                    {% if item == recipe.ingredients[-1,100] %} 
+                    <div class="row">  
                         <div class="input-field col s10">
                             <i class="small material-icons prefix">shopping_basket</i>
-                            <input id="ingredients" id="recipe_ingredients" type="text" name="ingredients" class="validate">
+                            <input id="ingredients" id="ingredients" type="text" name="ingredients" class="validate">
                             <label for="ingredients">Ingredients</label>
                         </div>
                         <div class="input-field col s2">
-                            <a class="btn-floating btn-small waves-effect waves-light red" id="add_ingredient"><i class="material-icons">add</i></a>
-                            
-                        </div>
-                    </div>
-                </div>                   
-            </div>
-            <div class="row"> 
-                <div class="row">
-                    <button class="col s12 btn medium-text waves-effect waves-light" type="submit">Save Recipe</button>
+                            <a class="btn-floating btn-small waves-effect waves-light red" id="add_ingredient"><i class="material-icons">add</i></a>     
+                        </div>                
+                     </div>
+                    {% else %}
+                    <div class="row new-ingredient"> 
+                        <div class="input-field col s10 m11">
+                            <input type="text" name="ingredients" id="ingredients" class="validate" value="{{item}}" required>
+                            <label for="ingredients">Ingredient(s)</label>
+                         </div>
+                        <div class="col s2 m1">
+                            <a class="btn-floating waves-effect waves-light red" id="delete_ingredient"><i class="material-icons">delete</i></a>
+                         </div>
+                    </div>    
+                    {% endif %}
+                {% endfor %}
                 </div>
-            </div>
-    </form>
+            <div class="row">
+                <button class="col s12 btn medium-text waves-effect waves-light" type="submit">Save Recipe</button>
+             </div>
+        </form>
+    </div>  
 </div>    
 
 {% endblock %}
