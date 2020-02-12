@@ -15,6 +15,12 @@ th {
     border-top-style: solid;
     border-bottom-style: solid;
 }
+#cook-timer {
+    color: red;
+}
+#prep-timer {
+    color: green;
+}
 /*recipe card tex align*/
 .table td, .table th {
     vertical-align: 0;
