@@ -22,9 +22,7 @@ th {
     color: green;
 }
 /*recipe card tex align*/
-.card {
-    height: 358px;
-}
+
 .table td, .table th {
     vertical-align: 0;
 }
