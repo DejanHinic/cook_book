@@ -13,11 +13,10 @@ mongo = PyMongo(app)
 
 """ Variables """
 users = mongo.db.users
-recipe = mongo.db.recipes
 recipes = mongo.db.recipes
-cuisine = mongo.db.cuisine
-dishes = mongo.db.dishes
-allergens = mongo.db.allergens
+
+
+allergens = ['Gluten', 'Milk', 'Eggs', 'Mullosc']
 
 @app.route('/')
 def index():
@@ -96,7 +95,7 @@ def insert_recipe():
 
 @app.route('/edit_recipe/<recipe_id>')
 def edit_recipe(recipe_id):
-    return render_template("edit_recipe.html", cuisine=cuisine.find(),
+    return render_template("edit_recipe.html",allergens = allergens,
             recipe=recipes.find_one({"_id": ObjectId(recipe_id)}))
 
 """ Send form data to update recipe in MongoDB """
