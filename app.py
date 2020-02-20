@@ -53,16 +53,17 @@ def register():
 
     return render_template('register.html')
 
-def index():
+@app.route('/')
+def pages():
     # Pagination function
     page_limit = 6
     current_page = int(request.args.get('current_page', 1))
-    total = mongo.db.Recipes.count()
+    total = mongo.db.recipes.count()
     pages = range(1, int(math.ceil(total / page_limit)) + 1)
     recipes = mongo.db.recipes.find().sort('_id', pymongo.DESCENDING).skip(
                             (current_page - 1)*page_limit).limit(page_limit)
 
-    return render_template("index.html", recipe=recipes, pages=pages,
+    return render_template("recipes.html", recipe=recipes, pages=pages,
                            current_page=current_page)
 
 @app.route('/get_recipes')

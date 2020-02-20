@@ -19,16 +19,18 @@
             </div>
         </section>
     
-<div class="container"> 
-    <div class="row col md-4">
+ 
+    
         
+        
+        <div class="container">
+            <div class="row">
             {% for recipe in recipes %}
-        
-            
+                <div class="col s4">
                 
                     <div class="card text-center" style="width: 25rem; margin: 15px;">
-                            <img src={{recipe.upload_image}} class="card-img-top" style="height: 40%;" alt="Responsive img">
-                        <div class="card-body">
+                            <img src={{recipe.upload_image}} class="card-img-top" style="height: 23rem;" alt="Responsive img">
+                        <div class="card-body" style="height: 36rem;">
                             <h5 class="card-title">{{recipe.recipe_title}}</h5>
                             <p class="card-text">{{recipe.recipe_description}}</p>
                             <table class="table">
@@ -59,19 +61,17 @@
                         </div>
                     </div>
                 
-            
-
+                </div>
             {% endfor %}
-    
-    </div>
- </div>
- <ul class="pagination">
+            </div>
+        </div>
+<ul class="pagination">
+                {% for page_number in pages %} {% if page_number == current_page %}
                 <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
-                <li class="active"><a href="#!">1</a></li>
-                <li class="waves-effect"><a href="#!">2</a></li>
-                <li class="waves-effect"><a href="#!">3</a></li>
-                <li class="waves-effect"><a href="#!">4</a></li>
-                <li class="waves-effect"><a href="#!">5</a></li>
+                <li class="active"><a href="#!">{{ page_number }}</a></li>
+                {% else %}
+                <li class="waves-effect">><a href="{{ url_for('recipes', current_page=page_number) }}" class="btn btn-primary paginate">{{ page_number }}</a></li>
                 <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
-            </ul>      
+                {% endif %} {% endfor %}
+</ul>                 
 {% endblock %}
