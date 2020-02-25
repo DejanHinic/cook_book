@@ -8,6 +8,13 @@ nav {
 #jumbo-top-margin {
     margin-top: 40px;
 }
+#jumbo-edit-add-margin {
+    margin-top: 0px;
+    margin-top: 0px;
+}
+.jumbotron {
+    padding: 0;
+}
 th {
     font-size: 25px;
 }
@@ -22,7 +29,10 @@ th {
     color: green;
 }
 /*recipe card tex align*/
-
+.card-title {
+    text-decoration: underline#008887;
+    
+}
 .table td, .table th {
     vertical-align: 0;
 }
@@ -72,8 +82,12 @@ i.small {
 /*recipe profile style*/
 #recipe_img {
       max-width: 100%;
-      height: 640px;
+      height:  570px;
       width: 860px;
+      margin-top: 40px;
+}
+#idrecipe_align {
+    height: 570px;
 }
 #responsive-recipe-image {
     max-width: 100%;
@@ -102,8 +116,15 @@ i.small {
     border-right: .0625rem solid #000;
     text-align: center;
 }
+#recipe_description {
+    font-family: Helvetica,Arial,Sans-serif;
+    font-size: 1.70rem;
+}
+#recipe_title {
+text-decoration: underline;
+}
 .recipe-details-container .recipe-details-item {
-    font-weight: 700;
+    font-weight: 400;
     padding: 0 .625rem 1.875rem;
 }
 @media only screen and (min-width: 40.625rem)
@@ -142,4 +163,22 @@ i.small {
 }
 .recipe-details-container .recipe-details-item:first-child {
     padding-top: 1.875rem;
+}
+/*------------------------------------------------------footer section */
+footer {
+    width: 100vw;
+    font-weight: 300;
+    margin: 0;
+    height: 30px;
+    background-color: #28b4b3;
+    height: 100px;
+    color: white;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+#dejanhinicgit {
+    color: white;
+}
+#footer_text {
+    padding-top: 20px;
 }
