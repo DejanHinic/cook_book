@@ -4,7 +4,7 @@
         <section id="cover">
             <div id="cover-caption">
                 <div id="container">
-                    <div class="col-sm-10 col-sm offset-5">
+                    <div class="col xl10 l10 offset-s5 col-s12 ">
                         <div class="info-form">
                         <form action="" class="form-inline">
                             <div class="form-group" style="width: 350px; margin: 20px;">
@@ -26,11 +26,11 @@
         <div class="container">
             <div class="row">
             {% for recipe in recipes %}
-                <div class="col s4">
+                <div class="col s12 m6 l6 xl4 ">
                 
-                    <div class="card text-center" style="width: 25rem; margin: 15px;">
+                    <div class="card text-center">
                             <img src={{recipe.upload_image}} class="card-img-top" style="height: 23rem;" alt="Responsive img">
-                        <div class="card-body" style="height: 36rem;">
+                        <div class="card-body" style="height: 38rem;">
                             <h5 class="card-title">{{recipe.recipe_title}}</h5>
                             <p class="card-text">{{recipe.recipe_description}}</p>
                             <table class="table">

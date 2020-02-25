@@ -1,5 +1,12 @@
+html {
+    padding:0;
+    margin: 0;
+}
 nav {
     background-color: #28b4b3;
+}
+.side-nav {
+    width: 200px;
 }
 /*index jumbotrons*/
 #login-jumbo{
@@ -164,6 +171,12 @@ text-decoration: underline;
 .recipe-details-container .recipe-details-item:first-child {
     padding-top: 1.875rem;
 }
+@media only screen and (max-device-width: 361px) {
+  .card text-center {
+    width: 21rem;
+    margin: 0;
+    }
+
 /*------------------------------------------------------footer section */
 footer {
     width: 100vw;
