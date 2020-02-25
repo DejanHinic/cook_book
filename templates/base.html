@@ -78,20 +78,20 @@
          <nav>
              <nav>
                 <div class="nav-wrapper">
-                    <a href="" class="brand-logo">Nom Nom <span>cook book</span></a>
+                    <a href="{{url_for('index')}}" class="brand-logo">Nom Nom <span>cook book</span></a>
                     <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
                     <ul id="nav-mobile" class="right hide-on-med-and-down">
                         <li><a href="{{url_for('index')}}">Home</a></li>
                         <li><a href="{{url_for('get_recipes')}}">Recipes</a></li>
                         <li><a href="{{url_for('add_recipe')}}">Add Recipe</a></li>
-                        <li><a href="">Kitchen Tools</a></li>
-                        <li><a class="waves-effect waves-light btn modal-trigger" href='login'>Log In</a></li>
+                        
+                        <!-- <li><a class="waves-effect waves-light btn modal-trigger" href='login'>Log In</a></li> -->
                     </ul>
                     <ul class="side-nav" id="mobile-demo">
                         <li><a href="{{url_for('index')}}">Home</a></li>
                         <li><a href="{{url_for('get_recipes')}}">Recipes</a></li>
                         <li><a href="{{url_for('add_recipe')}}">Add Recipe</a></li>
-                        <li><a href="">Kitchen Tools</a></li>
+                        
                         <li><a class="waves-effect waves-light btn modal-trigger" href="#login">Log In</a></li>
                     </ul>
                 </div>
