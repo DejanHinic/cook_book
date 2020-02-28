@@ -8,6 +8,11 @@ nav {
 .side-nav {
     width: 200px;
 }
+nav .brand-logo {
+    position: none;
+    display: contents;
+    font-size: 1.9rem;
+}
 /*index jumbotrons*/
 #login-jumbo{
     margin: auto;
@@ -38,7 +43,14 @@ th {
 /*recipe card tex align*/
 .card-title {
     text-decoration: underline#008887;
-    
+
+}
+/* recipe search style */
+#go_search {
+    float: right;
+}
+#info-form {
+    background-color: #c6ffff;
 }
 .table td, .table th {
     vertical-align: 0;
@@ -61,32 +73,18 @@ th {
     padding: 0;
     max-height: 80vh;
 }
-/*.img-fluid {
-    height: fit-content;
-    margin: 0;
-    padding: 0;
-}*/
 .row {
     margin-bottom: 0;
 }
 i.small {
     vertical-align: text-bottom;
 }
-#cover {
-  background: #c6ffff;
-  background-size: cover;
-  color: white;
-  height: 100%;
-  text-align: center;
-  display: flex;
-  align-items: center;
-}
-
 #cover-caption {
   width: 100%;
 }
 
 /*recipe profile style*/
+
 #recipe_img {
       max-width: 100%;
       height:  570px;
@@ -175,8 +173,11 @@ text-decoration: underline;
   .card text-center {
     width: 21rem;
     margin: 0;
-    }
-
+}
+@media only screen and (max-device-width: 321px)
+    nav .brand-logo {
+        font-size: 1.3rem;
+}
 /*------------------------------------------------------footer section */
 footer {
     width: 100vw;

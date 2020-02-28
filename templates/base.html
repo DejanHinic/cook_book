@@ -13,73 +13,13 @@
 <body>
         
 
-<div class="container-fluid">
-        <div id="sign_up" class="modal">
-            <div class="row">
-                <div class="col s6">
-                    <img src="/static/images/sign_in.jpg" class="img-fluid" alt="Responsive image">
-                </div>
-                 <div id="sign-up" class="col s12 center">
-                        <form method=POST action="{{ url_for('register') }}">
-                            <div class="input-field">
-                                <input placeholder="Enter your full name" id="fullname" name="fullname" type="text" class="validate" required>
-                                <label for="fullname">Full Name</label>
-                            </div>
-                            <div class="input-field">
-                                <input placeholder="Enter username" id="username" name="username" type="text" class="validate" required>
-                                <label for="username">Username</label>
-                            </div>
-                            <div class="input-field">
-                                <input placeholder="Enter password" id="password" name="password" type="text" class="validate" required>
-                                <label for="password">Password</label>
-                            </div>
-                            <button class="btn btn-spacing waves-effect waves-light" type="submit">Register</button>
-                        </form>
-                   
-                    
-                        
-                    
-                    
-                </div>
-            </div>    
-        </div>
-    </div>  
-    <div class="container-fluid">
-        <div id="log_in" class="modal">
-            <div class="row">
-                <div class="col s6">
-                    <img src="/static/images/sign_in.jpg" class="img-fluid" alt="Responsive image">
-                </div>
-                <div id="sign-in" class="col s12 center">
-                        <form method=POST action="{{ url_for('login') }}">
-                            <div class="input-field">
-                                <input placeholder="Enter username" id="username1" name="username" type="text" class="validate" required>
-                                <label for="username1">Username</label>
-                            </div>
-                            <div class="input-field">
-                                <label for="exampleInputPassword1">Password</label>
-                                <input type="password" class="form-control" name="pass" placeholder="Password">
-                            </div>
-                            <button class="btn btn-spacing waves-effect waves-light" type="submit">Log In</button>
-                        </form>
-                        <br>
-                        <div>
-                            Don't have an account? <a href="{{ url_for('register') }}">Sign up here</a>.
-                        </div>
-                    
-                        
-                    
-                    
-                </div>
-            </div>    
-        </div>
-    </div>  
+
     <header>
-         <nav>
-             <nav>
+        
+            <nav>
                 <div class="nav-wrapper">
-                    <a href="{{url_for('index')}}" class="brand-logo">Nom Nom cook book</span></a>
-                    <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+                        <a href="{{url_for('index')}}" class="brand-logo">Nom Nom cook book</a>
+                        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
                     <ul id="nav-mobile" class="right hide-on-med-and-down">
                         <li><a href="{{url_for('index')}}">Home</a></li>
                         <li><a href="{{url_for('get_recipes')}}">Recipes</a></li>
@@ -104,12 +44,12 @@
         </main>
             
     
-    <footer class="footer">
-        <div class="container-fluid text-center" id="footer_text">
-            <a href="https://github.com/DejanHinic" id="dejanhinicgit" target="_blank">
+    <footer>
+            <div class="container-fluid text-center">
+                <a href="https://github.com/DejanHinic" target="_blank">
                 <span  class="github"><i class="fas fa-copyright"></i> Dejan Hinic 2020
                 <i class="fab fa-github"></i></span></a>
-        </div>
+             </div>
     </footer>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
@@ -118,13 +58,7 @@
                 $('.collapsible').collapsible();
                 $('select').material_select();
                 $(".button-collapse").sideNav();  
-                $('.carousel.carousel-slider').carousel({fullWidth: true});
-                $('.modal').modal();
-                $('#modal1').modal('open');
-                $('#modal1').modal('close');
-                
-                
-
+               
                 var delete_icon = '<i class="material-icons">delete</i></a></div></div>';
                 var ingredient_field = `<div class="row new-ingredient"> <div class="input-field col s10 m11">
                         <input type="text" name="ingredients" class="validate" required>
