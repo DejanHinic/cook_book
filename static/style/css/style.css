@@ -1,15 +1,14 @@
 html {
-    padding:0;
     margin: 0;
+    padding: 0;
 }
 nav {
-    background-color: #28b4b3;
+    background-color: lightseagreen;
 }
 .side-nav {
     width: 200px;
 }
 nav .brand-logo {
-    position: none;
     display: contents;
     font-size: 1.9rem;
 }
@@ -21,8 +20,7 @@ nav .brand-logo {
     margin-top: 40px;
 }
 #jumbo-edit-add-margin {
-    margin-top: 0px;
-    margin-top: 0px;
+    margin-top: 0;
 }
 .jumbotron {
     padding: 0;
@@ -67,16 +65,10 @@ th {
 #add_recipe_main {
     margin-bottom: 80px;
 }
-
-.modal {
-    
-    padding: 0;
-    max-height: 80vh;
-}
 .row {
     margin-bottom: 0;
 }
-i.small {
+.small {
     vertical-align: text-bottom;
 }
 #cover-caption {
@@ -115,11 +107,11 @@ i.small {
 .recipe-details-container .recipe-details-item:first-child {
     padding-top: 1.875rem;
 }
-@media only screen and (min-width: 40.625rem)
+@media (min-width: 650px) {
 .recipe-details-container .recipe-details-item {
     padding-top: 1.875rem;
     border-right: .0625rem solid #000;
-    text-align: center;
+    text-align: center;}
 }
 #recipe_description {
     font-family: Helvetica,Arial,Sans-serif;
@@ -132,10 +124,10 @@ text-decoration: underline;
     font-weight: 400;
     padding: 0 .625rem 1.875rem;
 }
-@media only screen and (min-width: 40.625rem)
-.recipe-details-container .recipe-details-item:last-child {
-    border-right: 0;
-}
+@media (min-width: 650px){
+ .recipe-details-container .recipe-details-item:last-child
+    {border-right: 0;}
+} 
 .yields-unit, .recipe-time-unit {
     font-family: Helvetica,Arial,Sans-serif;
     font-size: .8125rem;
@@ -154,9 +146,9 @@ text-decoration: underline;
     color: #008887;
     padding-top: .625rem;
 }
-@media only screen and (min-width: 40.625rem)
-.cal-per-serv-amount, .yields-amount, .prep-time-amount, .cook-time-amount, .total-time-amount {
-    display: block;
+@media (min-width: 650px) {
+.cal-per-serv-amount, .yields-amount, .prep-time-amount, .cook-time-amount, .total-time-amount
+    { display: block;}
 }
 .recipe-details-container .recipe-details-item {
     padding-top: 1.875rem;
@@ -169,30 +161,24 @@ text-decoration: underline;
 .recipe-details-container .recipe-details-item:first-child {
     padding-top: 1.875rem;
 }
-@media only screen and (max-device-width: 361px) {
-  .card text-center {
-    width: 21rem;
-    margin: 0;
+@media (max-width: 361px) {
+    .card text-center {width: 21rem; margin: 0;}
+    #recipe_img {height: 150px;}
+    #recipe_description {font-size: small; margin: 0; padding: 0;}
+    #recipe_title {font-size: large; margin: 0; padding: 0;}
+    .recipe-details-container {width: 292px;}
+    .cal-per-serv-amount, .yields-amount, .prep-time-amount, .cook-time-amount, .total-time-amount {font-size: large;}
+    
 }
-@media only screen and (max-device-width: 321px)
-    nav .brand-logo {
-        font-size: 1.3rem;
+@media (max-width: 321px) {
+    .brand-logo {
+        font-size: 1.3rem;}
 }
-/*------------------------------------------------------footer section */
-footer {
+#footer_logo {
     width: 100vw;
     font-weight: 300;
-    margin: 0;
-    height: 30px;
-    background-color: #28b4b3;
+    background-color: lightseagreen;
     height: 100px;
     color: white;
-    padding-top: 20px;
-    padding-bottom: 20px;
-}
-#dejanhinicgit {
-    color: white;
-}
-#footer_text {
-    padding-top: 20px;
+    padding-top: 30px;
 }
