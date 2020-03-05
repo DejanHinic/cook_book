@@ -39,24 +39,34 @@ The following are the features provided in Nom Nom cook book.
 #### User Registration
 * Users are able to registrate their account by creating their name and password.
 
-#### Search recipes
+#### Search recipes and recipes collection
 * This feature is still left to implement. It will allow user to search recipe by text. 
+
+![Search and all Recipes Data](https://github.com/DejanHinic/cook_book/blob/master/static/images/screencapture_allrecipes.png?raw=true)
 
 #### Check the recipe 
 * User can check the informations about the specific recipes. (steps, ingredients, allergens, prep and cook info, cuisine style)
 
+![Recipe Info Data](https://github.com/DejanHinic/cook_book/blob/master/static/images/screencapture_recipeinfo.png?raw=true)
+
 #### Add recipe
 * Users can store informations (recipe title, short description, steps, ingredients, allergens, prep and cook info, cuisine style).
 
+![Adding Data](https://github.com/DejanHinic/cook_book/blob/master/static/images/screencapture_addrecipe.png?raw=true)
+
 #### Editing recipe 
 * All collected information for any recipe can be edited.
+
+![Editing Data](https://github.com/DejanHinic/cook_book/blob/master/static/images/screencapture_editrecipe.png?raw=true)
 
 #### Deleting recipe
 * Simply just click delete button and recipe will be erased fro MongoDb database.
 
 #### Kitchen Tools section
 This section is addition to this project as one of the requirements of the assigment.
+
 There are 3 cards which have short description about Cookware, Appliances and Knives.
+
 All of these cards have a link to a websites which I choose to give an options to buy and infos for user. 
 
 
@@ -73,7 +83,10 @@ The application was tested manually by walking through the features.
 the sign up page opens and displays the registration form
 
 
-### Features Left to Implement
+### Features Left to Fix
+* Log in feature is still having few details that I need to fix to be in order
+* Text search engine to be implemented
+* Pagination to be fixed to work properly
 
 ## Database Organisation
 Nom Nom cook book uses a document-oriented database using MongoDB. The chosen structure was developed by progessing through the following steps:
@@ -83,6 +96,9 @@ Nom Nom cook book uses a document-oriented database using MongoDB. The chosen st
     * Users: 
          - name
          - password
+
+![Users Data](https://github.com/DejanHinic/cook_book/blob/master/static/images/screencapture_userdata.png?raw=true)
+
     * Recipe
         - title
         - short description
@@ -96,5 +112,6 @@ Nom Nom cook book uses a document-oriented database using MongoDB. The chosen st
         - ingredients
         - allergens
 
+![Recipe Data](https://github.com/DejanHinic/cook_book/blob/master/static/images/screencapture_recipedata.png?raw=true)
 
  
