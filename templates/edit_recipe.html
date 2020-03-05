@@ -1,7 +1,5 @@
 {% extends 'base.html'%} {% block content %}
 <div class="container" id="add_recipe_main">   
-    
-       
         <div class="jumbotron" id="#jumbo-edit-add-margin"> 
         <div class="row" id="add_recipe_title">
                 <div class="col-md-6 col-offset-6" id="login-jumbo">
@@ -10,7 +8,7 @@
             </div>
         </div>
     <br>
-    
+    <!-- start of the form -->
     <form action="{{url_for('update_recipe', recipe_id =recipe._id)}}" method="POST" class="recipe-form">
             <div class="row">
                 <div class="input-field col s6">
@@ -18,58 +16,66 @@
                     <input id="recipe_title" type="text" name="recipe_title" value="{{recipe.recipe_title}}" required>
                     <label for="recipe_title">Recipe Title</label>
                 </div>
+            <!-- recipe description details -->
                 <div class="input-field col s6">
                     <i class="small material-icons prefix">description</i>
                     <input id="recipe_description" type="text" name="recipe_description" value="{{recipe.recipe_description}}">
                     <label for="recipe_description">Description</label>
                 </div>
             </div>
+            <!-- cook time details -->
             <div class="row">
                 <div class="input-field col s6">
                     <i class="small material-icons prefix">access_time</i>
                     <input placeholder="1234 mins" id="cook_time" type="text" name="cook_time" value="{{recipe.cook_time}}">
                     <label for="cook_time">Cook Time</label>
                 </div>
+            <!-- prep time details -->
                 <div class="input-field col s6">
                     <i class="small material-icons prefix">access_time</i>
                     <input placeholder="1234 mins" id="prep_time" type="text" name="prep_time" value="{{recipe.prep_time}}">
                     <label for="prep_time">Prep Time</label>
                 </div>
             </div>
+            <!-- serves details -->
             <div class="row">
                 <div class="input-field col s6">
                     <i class="small material-icons prefix">group</i>
                     <input placeholder="1, 2, 3 ... persons" id="serves" type="text" name="serves" value="{{recipe.serves}}">
                     <label for="serves">Serves</label>
                 </div>
+            <!-- food type details -->
                 <div class="input-field col s6">
                     <i class="small material-icons prefix">fastfood</i>
                     <input placeholder="pasta, ramen, risotto etc." id="food_type" type="text" name="food_type" value="{{recipe.food_type}}">
                     <label for="food_type">Food Type</label>
                 </div>
             </div>
+            <!-- cuisine details -->
             <div class="row">
                 <div class="input-field col s6">
                     <i class="small material-icons prefix">flag</i>
                     <input placeholder="Italian, Croatian, Irish etc." id="cuisine" type="text" name="cuisine" value="{{recipe.cuisine}}">
                     <label for="cuisine">Cuisine</label>
                 </div>
+            <!-- calories details -->
                 <div class="input-field col s6">
                     <i class="small material-icons prefix">whatshot</i>
                     <input placeholder="1234 cals" id="calories" type="text" name="calories"value="{{recipe.calories}}">
                     <label for="calories">Calories</label>
                 </div>
-            </div>      
+            </div>
+            <!-- allergens details -->
             <div class="row">
                 <div class="input-field col s6">
                     <i class="small material-icons prefix">playlist_add</i>
                             <select multiple id="allergens" type="text" name="allergens">
                                 <option value="" disabled selected>Select Allergens</option>
                                 { % for item in allergens % }
-                                <option value="{{ item }}" selected = {{  item in recipe.allergens  }}>{{ allergens }}</option>
+                                <option selected = "{{  item in recipe.allergens  }}">{{ allergens }}</option>
                                 { % endfor %}
-                                <!-- <option value="gluten" selected = >Gluten</option> -->
-                                <!-- <option value="crustaceans">Crustaceans</option>
+                                <option value="gluten">Gluten</option>
+                                <option value="crustaceans">Crustaceans</option>
                                 <option value="Eggs">Eggs</option>
                                 <option value="Fish">Fish</option>
                                 <option value="Peanuts">Peanuts</option>
@@ -81,66 +87,44 @@
                                 <option value="Sesame seeds">Sesame seeds</option>
                                 <option value="Sulphur dioxide and sulphites">Sulphur dioxide and sulphites</option>
                                 <option value="Lupin">Lupin</option>
-                                <option value="Molluscs">Molluscs</option> -->
+                                <option value="Molluscs">Molluscs</option>
                             </select>
                                 <label for="allergens">Allergens</label>
                 </div>
+            <!-- upload img -->
                 <div class="input-field col s6">
                     <i class="small material-icons prefix">publish</i>
                     <input placeholder="paste your URL here" id="upload_image" type="text" name="upload_image" value="{{recipe.upload_image}}">
                     <label for="upload_image">Upload Image</label>
                 </div>
             </div>
+            <!-- steps details -->
                 <div class="row">
                     <div class="col s12 flow-text">Steps</div>
                 </div>
                     <div id="steps">
                     {% for item in recipe.steps %}
                     <div class="row">
-                                <div class="input-field col s10">
-                                    <i class="small material-icons prefix">list</i>
-                                    <!-- <input placeholder="please enter next step" id="recipe_steps" type="text" name="steps"> -->
-                                    <input type="text" id="steps" name="steps" class="validate" value="{{item}}" required>
-                                    <label for="steps">Steps</label>
-                                </div>
-                                    <div class="col s2 m1">
-                                        <a class="btn-floating waves-effect waves-light waves-light red" id="add_step"><i class="material-icons">add</i></a>
-                                    </div>
-                                </div>
-                      <!----  {% if item == recipe.steps[-1,100] %} 
-                        <div class="row">
-                                <div class="input-field col s10">
-                                    <i class="small material-icons prefix">list</i>
-                                    <input placeholder="please enter next step" id="recipe_steps" type="text" name="steps">
-                                    <label for="steps">Steps</label>
-                                </div>
-                                    <div class="col s2 m1">
-                                        <a class="btn-floating waves-effect waves-light waves-light red" id="add_step"><i class="material-icons">add</i></a>
-                                    </div>
-                         </div>
-                        {% else %}
-                        <div class="row new-step">
-                                <div class="input-field col s10 m11">
-                                    <input type="text" id="steps" name="steps" class="validate" value="{{item}}" required>
-                                    <label for="steps">Step(s)</label>
-                                </div>
-                                <div class="col s1">
-                                    <a class="btn-floating waves-effect waves-light red" id="delete_step"><i class="material-icons">delete</i></a>
-                                </div>
+                        <div class="input-field col s10">
+                            <i class="small material-icons prefix">list</i>
+                            <input type="text" id="steps" name="steps" class="validate" value="{{item}}" required>
+                            <label for="steps">Steps</label>
                         </div>
-                        {% endif %}-->
+                            <div class="col s2 m1">
+                                <a class="btn-floating waves-effect waves-light waves-light red" id="add_step"><i class="material-icons">add</i></a>
+                            </div>
+                        </div>
                     {% endfor %}
                      </div>
-             
             <div class="row">
                 <div class="col s12 flow-text">Ingredients</div>
             </div>
                 <div id="ingredients">
+                <!-- ingredients details -->
                 {% for item in recipe.ingredients %}
                 <div class="row">  
                         <div class="input-field col s10">
                             <i class="small material-icons prefix">shopping_basket</i>
-                            <!-- <input id="ingredients" id="ingredients" type="text" name="ingredients" class="validate"> -->
                             <input type="text" name="ingredients" id="ingredients" class="validate" value="{{item}}" required>
                             <label for="ingredients">Ingredients</label>
                         </div>
@@ -148,14 +132,11 @@
                             <a class="btn-floating btn-small waves-effect waves-light red" id="add_ingredient"><i class="material-icons">add</i></a>     
                         </div>                
                      </div>
-                    
                 {% endfor %}
                 </div>
             <div class="row">
                 <button class="col s12 btn medium-text waves-effect waves-light" type="submit">Save Recipe</button>
              </div>
     </form>
-    
 </div>    
-
 {% endblock %}

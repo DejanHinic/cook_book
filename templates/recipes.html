@@ -1,6 +1,4 @@
 {% extends 'base.html'%} {% block content %}
-
-    
         <section id="cover">
             <div id="cover-caption">
                 <div class="container">
@@ -16,17 +14,11 @@
                     </div>
                 </div>
             </div>
-        </section>
-    
- 
-    
-        
-        
+        </section>     
         <div class="container">
             <div class="row">
             {% for recipe in recipes %}
                 <div class="col s12 m6 l6 xl4 ">
-                
                     <div class="card text-center">
                             <img src={{recipe.upload_image}} class="card-img-top" style="height: 23rem;" alt="Responsive img">
                         <div class="card-body" style="height: 38rem;">
@@ -34,8 +26,7 @@
                             <p class="card-text">{{recipe.recipe_description}}</p>
                             <table class="table">
                                 <tbody>
-                                    <tr>
-                                    
+                                    <tr>   
                                         <th scope="row"><i class="small material-icons prefix" id="prep-timer">access_time</i></th>
                                         <td>{{recipe.prep_time}}</td>
                                         <th scope="row"><i class="small material-icons prefix" id="cook-timer">access_time</i></th>
@@ -55,11 +46,9 @@
                                     </tr>
                                 </tbody>
                             </table>
-
                             <a href="{{url_for('the_recipe', recipe_id = recipe._id, recipe_title = recipe.recipe_title)}}" class="btn btn-recipe-card">View this recipe <i class="material-icons right">chevron_right</i></a>
                         </div>
                     </div>
-                
                 </div>
             {% endfor %}
             </div>

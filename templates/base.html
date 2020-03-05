@@ -11,11 +11,7 @@
     <link rel="stylesheet" href="{{url_for('static', filename='style/css/style.css')}}" type="text/css"/>
 </head>
 <body>
-        
-
-
     <header>
-        
             <nav>
                 <div class="nav-wrapper">
                         <a href="{{url_for('index')}}" class="brand-logo">Nom Nom cook book</a>
@@ -24,19 +20,15 @@
                         <li><a href="{{url_for('index')}}">Home</a></li>
                         <li><a href="{{url_for('get_recipes')}}">Recipes</a></li>
                         <li><a href="{{url_for('add_recipe')}}">Add Recipe</a></li>
-                        
-                        <!-- <li><a class="waves-effect waves-light btn modal-trigger" href='login'>Log In</a></li> -->
                     </ul>
                     <ul class="side-nav" id="mobile-demo">
                         <li><a href="{{url_for('index')}}">Home</a></li>
                         <li><a href="{{url_for('get_recipes')}}">Recipes</a></li>
                         <li><a href="{{url_for('add_recipe')}}">Add Recipe</a></li>
-                        
                         <li><a class="waves-effect waves-light btn modal-trigger" href="#login">Log In</a></li>
                     </ul>
                 </div>
             </nav>
-            
     </header>
                 <main style="padding-bottom: 30px; padding-top: 30px;">
                     {% block content %}
@@ -68,8 +60,6 @@
                         ${delete_icon}`;
                 
                 
-
-
                 // add and remove ingredient
                 $("#add_ingredient").click(function() {
                     $("#ingredients").append(ingredient_field);
@@ -88,7 +78,6 @@
                     $(this).parents(".new-step").remove();
                 });
             }); 
-           
         </script>
 </body>
 </html>
