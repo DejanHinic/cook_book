@@ -27,6 +27,8 @@ The application is hosted on the **Heroku** platform, the database is hosted by 
 
 The **MONGO_URI** and **SECRET_KEY** are hidden in environment variables locally during development and stored as environment variables using Heroku Config Vars in production. 
 
+### Mockup and Wireframe
+
 ### Features
 The following are the features provided in Nom Nom cook book.
 
@@ -97,7 +99,7 @@ Nom Nom cook book uses a document-oriented database using MongoDB. The chosen st
          - name
          - password
 
-![Users Data](https://github.com/DejanHinic/cook_book/blob/master/static/images/screencapture_userdata.png?raw=true)
+            ![Users Data](https://github.com/DejanHinic/cook_book/blob/master/static/images/screencapture_userdata.png?raw=true)
 
     * Recipe
         - title
@@ -114,4 +116,13 @@ Nom Nom cook book uses a document-oriented database using MongoDB. The chosen st
 
 ![Recipe Data](https://github.com/DejanHinic/cook_book/blob/master/static/images/screencapture_recipedata.png?raw=true)
 
- 
+### Technologies Used
+* html5 https://www.w3schools.com/html/
+* css https://www.w3schools.com/css/css_intro.asp for styling
+* bootstrap 4 https://getbootstrap.com/ to build the grid and make it responsive for all devices
+* balsamic for wireframe https://balsamiq.com/?gclid=CjwKCAjwndvlBRANEiwABrR32Mzzb1wWuG0slcCQDwB1B2W9OBv8pacL7BzOZ9sGnPggguab1vbt4BoCTewQAvD_BwE
+* AdobeXD for mockups
+* Materialize for style
+* Flask 
+* MongoDB
+* Python
