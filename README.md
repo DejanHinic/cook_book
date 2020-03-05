@@ -27,7 +27,9 @@ The application is hosted on the **Heroku** platform, the database is hosted by 
 
 The **MONGO_URI** and **SECRET_KEY** are hidden in environment variables locally during development and stored as environment variables using Heroku Config Vars in production. 
 
-### Mockup and Wireframe
+### Mockup and Wireframe links
+* [Mockups](https://github.com/DejanHinic/cook_book/tree/master/static/Mockups)
+* [Wireframes](https://github.com/DejanHinic/cook_book/tree/master/static/Wireframe)
 
 ### Features
 The following are the features provided in Nom Nom cook book.
