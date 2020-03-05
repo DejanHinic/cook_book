@@ -11,12 +11,11 @@ app.config["MONGO_URI"] = os.getenv('MONGO_URI', 'mongodb+srv://root:0t0rin0lari
 app.config['SECRET_KEY'] = os.urandom(24)
 mongo = PyMongo(app)
 
-""" Variables """
+# """ Variables """
 users = mongo.db.users
 recipes = mongo.db.recipes
-
-
 allergens = ['Gluten', 'Milk', 'Eggs', 'Mullosc']
+
 
 @app.route('/')
 def index():
@@ -24,7 +23,8 @@ def index():
         return 'You are logged in as ' + session['username']
 
     return render_template("index.html")
-
+    
+# logging to account (still have issues)
 @app.route('/login', methods=['POST'])
 def login():
     users = mongo.db.users
@@ -36,7 +36,7 @@ def login():
             return redirect(url_for('index'))
 
     return 'Invalid username/password combination'
-
+# send reg info to database
 @app.route('/register', methods=['POST', 'GET'])
 def register():
     if request.method == 'POST':
@@ -66,15 +66,18 @@ def pages():
     return render_template("recipes.html", recipe=recipes, pages=pages,
                            current_page=current_page)
 
+# CRUD operations
+
+# get data
 @app.route('/get_recipes')
 def get_recipes():
     return render_template("recipes.html", 
                            recipes=mongo.db.recipes.find())
-
+# add data
 @app.route('/add_recipe')
 def add_recipe():
     return render_template('add_recipe.html')
-
+# add recipe
 @app.route('/insert_recipe', methods=['POST'])
 def insert_recipe():
     recipe = mongo.db.recipes
@@ -94,12 +97,15 @@ def insert_recipe():
                        'upload_image': request.form['upload_image']})
     return redirect(url_for('get_recipes'))
 
+# get and edit data to sent back to database
+
 @app.route('/edit_recipe/<recipe_id>')
 def edit_recipe(recipe_id):
     return render_template("edit_recipe.html",allergens = allergens,
             recipe=recipes.find_one({"_id": ObjectId(recipe_id)}))
 
-""" Send form data to update recipe in MongoDB """
+# Send form data to update recipe in MongoDB
+
 @app.route('/update_recipe/<recipe_id>', methods=["POST"])
 def update_recipe(recipe_id):
     recipes.update( {'_id': ObjectId(recipe_id)},
@@ -121,7 +127,7 @@ def update_recipe(recipe_id):
         })
     return redirect(url_for('get_recipes'))
 
-
+# recipe info
 @app.route('/the_recipe/<recipe_id>/<recipe_title>')
 def the_recipe(recipe_id, recipe_title):
     return render_template("the_recipe.html",
@@ -129,7 +135,7 @@ def the_recipe(recipe_id, recipe_title):
             'recipe_title': recipe_title}))
 
 
-""" Removes a recipe from MongoDB """
+# Removes a recipe from MongoDB
 @app.route('/delete_recipe/<recipe_id>')
 def delete_recipe(recipe_id):
     recipes.remove({'_id': ObjectId(recipe_id)})

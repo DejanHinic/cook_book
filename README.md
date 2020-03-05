@@ -16,10 +16,85 @@ Users will be able to read, add, edit, and delete recipes.
 They will be also able to create their account and log in with it and search the recipes > (THIS 2 FEATURES ARE STILL IN ADAPTATION PROGRES!!!)
 
 ### How does it work?
-**Nim Nom cook book** is built using the python-based **Flask** micro-framework. 
+
+**Nom Nom cook book** is built using the python-based **Flask** micro-framework. 
+
 **PyMongo** is used to connect the application's Python classes and methods to a **MongoDB** database. All data input is handled using **WTForms**.
+
 The site is styled using the **Bootstrap CSS** and **Materialize CSS** front-end framework for responsiveness and enhanced user-experience. **JQuery** are dependencies of Bootstrap. 
+
 The application is hosted on the **Heroku** platform, the database is hosted by **MongoDB Atlas**. 
+
 The **MONGO_URI** and **SECRET_KEY** are hidden in environment variables locally during development and stored as environment variables using Heroku Config Vars in production. 
+
+### Features
+The following are the features provided in Nom Nom cook book.
+
+#### Basic Features
+* Users can add recipe, read info, delete or edit. (In future only registrated users will be able to edit or delete recipes)
+
+### Navbar
+* Navbar is responsive on any device and when is showed on smaller screens then navbar transforms as a side navbar
+
+#### User Registration
+* Users are able to registrate their account by creating their name and password.
+
+#### Search recipes
+* This feature is still left to implement. It will allow user to search recipe by text. 
+
+#### Check the recipe 
+* User can check the informations about the specific recipes. (steps, ingredients, allergens, prep and cook info, cuisine style)
+
+#### Add recipe
+* Users can store informations (recipe title, short description, steps, ingredients, allergens, prep and cook info, cuisine style).
+
+#### Editing recipe 
+* All collected information for any recipe can be edited.
+
+#### Deleting recipe
+* Simply just click delete button and recipe will be erased fro MongoDb database.
+
+#### Kitchen Tools section
+This section is addition to this project as one of the requirements of the assigment.
+There are 3 cards which have short description about Cookware, Appliances and Knives.
+All of these cards have a link to a websites which I choose to give an options to buy and infos for user. 
+
+
+### Testing
+The application was tested manually by walking through the features.
+
+* All the pages are responsive on all devices thx to Bootstrap.
+
+* The data is stored correctly in MongoDB. There are 2 collections = Recipes and Users
+
+* Codes were tested with jigsaw.w3.org , validator.w3.org and codebeautify.org validators
+
+* click the 'sign up' link:
+the sign up page opens and displays the registration form
+
+
+### Features Left to Implement
+
+## Database Organisation
+Nom Nom cook book uses a document-oriented database using MongoDB. The chosen structure was developed by progessing through the following steps:
+
+* defining the recipe details and registrating users account stored at Recipes and Users
+
+    * Users: 
+         - name
+         - password
+    * Recipe
+        - title
+        - short description
+        - cook time
+        - prep time
+        - cuisine
+        - serves 
+        - calories
+        - food type
+        - steps
+        - ingredients
+        - allergens
+
 
  
