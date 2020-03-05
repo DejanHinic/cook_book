@@ -128,3 +128,9 @@ Nom Nom cook book uses a document-oriented database using MongoDB. The chosen st
 * Flask 
 * MongoDB
 * Python
+
+### Content and Acknowledgements
+The recipes were copied from the https://www.delish.com/cooking/ and I've got the inspiration from that page. 
+
+### Media
+The photos used in this site were obtained mostly from google
