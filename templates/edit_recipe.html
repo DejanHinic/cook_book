@@ -71,10 +71,14 @@
                     <i class="small material-icons prefix">playlist_add</i>
                             <select multiple id="allergens" type="text" name="allergens">
                                 <option value="" disabled selected>Select Allergens</option>
-                                { % for item in allergens % }
-                                <option selected = "{{  item in recipe.allergens  }}">{{ allergens }}</option>
-                                { % endfor %}
-                                <option value="gluten">Gluten</option>
+                                {% for item in allergens %}
+                                {% if item in recipe.allergens %}
+                                <option value="{{ item }}" selected>{{ item }}</option>
+                                {% else %}
+                                <option value="{{ item }}">{{ item }}</option>
+                                {% endif %}
+                                {% endfor %}
+                                <!-- <option value="gluten">Gluten</option>
                                 <option value="crustaceans">Crustaceans</option>
                                 <option value="Eggs">Eggs</option>
                                 <option value="Fish">Fish</option>
@@ -87,8 +91,7 @@
                                 <option value="Sesame seeds">Sesame seeds</option>
                                 <option value="Sulphur dioxide and sulphites">Sulphur dioxide and sulphites</option>
                                 <option value="Lupin">Lupin</option>
-                                <option value="Molluscs">Molluscs</option>
-                            </select>
+                                <option value="Molluscs">Molluscs</option> -->
                                 <label for="allergens">Allergens</label>
                 </div>
             <!-- upload img -->

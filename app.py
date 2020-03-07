@@ -14,7 +14,7 @@ mongo = PyMongo(app)
 # """ Variables """
 users = mongo.db.users
 recipes = mongo.db.recipes
-allergens = ['Gluten', 'Milk', 'Eggs', 'Mullosc']
+allergens = ['Gluten', 'Milk', 'Eggs', 'Mullosc', 'Fish', 'Soyabeans', 'Peanuts', 'Nuts', 'Celery', 'Mustard', 'Sesame seeds', 'Sulphur dioxide and sulphites', 'Lupin','Crustaceans']
 
 
 @app.route('/')
