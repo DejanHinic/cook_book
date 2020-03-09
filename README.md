@@ -2,7 +2,7 @@
 
 ## Milestone Project 3
 
-### [Depoyment on Heroku](https://noom-noom-cookbook.herokuapp.com/)
+### [Demo is available here!](https://noom-noom-cookbook.herokuapp.com/)
 
 ![Nom Nom cook book](https://github.com/DejanHinic/cook_book/blob/master/static/images/screencapture-noom-noom-cookbook-herokuapp-com-1583152419684.png?raw=true)
 

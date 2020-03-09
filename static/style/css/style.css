@@ -137,6 +137,23 @@ text-decoration: underline;
 @media (min-width: 650px){
  .recipe-details-container .recipe-details-item:last-child
     {border-right: 0;}
+}
+/* index cards style to fit all devices */
+@media (max-width: 420px){
+#cookware, #knives, #appliances
+    {width: 24rem;}
+}
+@media (max-width: 376px){
+#cookware, #knives, #appliances
+    {width: 22rem;}
+}
+@media (max-width: 361px){
+#cookware, #knives, #appliances
+    {width: 21rem;}
+}
+@media (max-width: 321px){
+#cookware, #knives, #appliances
+    {width: 18.4rem;}
 } 
 @media (min-width: 650px) {
 .cal-per-serv-amount, .yields-amount, .prep-time-amount, .cook-time-amount, .total-time-amount
@@ -159,14 +176,20 @@ text-decoration: underline;
 .recipe-details-container .recipe-details-item:first-child {
     padding-top: 1.875rem;
 }
-/* small mobile devices */
-@media (max-width: 361px) {
+/* recipe details */
+@media (max-width: 450px) {
     .card text-center {width: 21rem; margin: 0;}
-    #recipe_img {height: 150px;}
-    #recipe_description {font-size: small; margin: 0; padding: 0;}
-    #recipe_title {font-size: large; margin: 0; padding: 0;}
+    #recipe_img {height: 153px; margin-top:0;}
+    #recipe_description {font-size: small; padding: 0;}
+    #recipe_title {font-size: large; padding: 0;}
     .recipe-details-container {width: 292px;}
     .cal-per-serv-amount, .yields-amount, .prep-time-amount, .cook-time-amount, .total-time-amount {font-size: large;}
+}
+@media (max-width: 321px) {
+    main {margin-left: -17px;}
+}
+@media (min-width: 767px) {
+   #recipe_img {height: 381px;}
 }
 @media (max-width: 321px) {
     .brand-logo {
