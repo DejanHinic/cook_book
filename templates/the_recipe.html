@@ -1,59 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Recipe detail</title>
 {% extends 'base.html'%} {% block content %}
 <div class="container">
-    <div>
-        <div class="row">
+    <div class="row">
             <div class="col s6" id="recipe_align">
                 <h1 id="recipe_title">{{recipe.recipe_title}}</h1>
                 <br>
-                <h4 id="recipe_description">{{recipe.recipe_description}}</h4>
+                <h4 id="recipe_text">{{recipe.recipe_description}}</h4>
                 <div class="recipe-details-container">
                         <div class="recipe-details-item yields">    
                                     		Serves:
-                                <br><span class="yields-amount">
-                                            {{recipe.serves}}                         
-                                </span></br>
+                                <br><span class="yields-amount">{{recipe.serves}}</span>
                         </div>
                         <div class="recipe-details-item prep-time">
                                     Prep Time:
-                                <br><span class="prep-time-amount">
-                                            {{recipe.prep_time}}               
-                                </br></span>   
+                                <br><span class="prep-time-amount">{{recipe.prep_time}}</span>
                         </div>
                         <div class="recipe-details-item total-time">
                                             Cook Time:
-                                <br><span class="total-time-amount">           
-                                        {{recipe.cook_time}}    
-                                </br></span>
+                                <br><span class="total-time-amount">{{recipe.cook_time}}</span>
                         </div>
                 </div>
                 <div class="recipe-details-container">
                         <div class="recipe-details-item yields">    
                                     		Cuisine:
-                                <br><span class="yields-amount">
-                                             {{recipe.cuisine}}                   
-                                </br></span>
+                                <br><span class="yields-amount">{{recipe.cuisine}}</span>
                         </div>
                         <div class="recipe-details-item prep-time">
                                     Food type:
-                                <br><span class="prep-time-amount">
-                                            {{recipe.food_type}}      
-                                </br></span>
+                                <br><span class="prep-time-amount">{{recipe.food_type}}</span>
                         </div>
                         <div class="recipe-details-item total-time">
                                             Calories:
-                                <br><span class="total-time-amount">           
-                                        {{recipe.calories}}  
-                                </br></span>
+                                <br><span class="total-time-amount">{{recipe.calories}}</span>
                         </div>
                 </div>
-        </div>
+    </div>
             <div class="col s6">
-                <img id="recipe_img" src="{{recipe.upload_image}}">
+                <img id="recipe_img" alt="recipe_pic" src="{{recipe.upload_image}}">
             </div>
         </div>
     </div>
+    <div class="container">
     <!-- section starting with steps, allergens and ingredients -->
-         <ul class="collapsible" data-collapsible="accordion">
+        <ul class="collapsible" data-collapsible="accordion">
             <li>
                 <div class="collapsible-header"><i class="material-icons">list</i>Steps</div>
             {% for items in recipe.steps %} 
@@ -75,12 +66,11 @@
         </ul>
         <div class="row">
                 <div class="col">
-                    <a href="{{url_for('edit_recipe', recipe_id = recipe._id)}}" class="btn nav-btn btn-primary"> Edit Recipe</a>
+                <a href="{{url_for('edit_recipe', recipe_id = recipe._id)}}" class="btn nav-btn btn-primary"> Edit Recipe</a>
                 </div>
             <div class="col s3 center">
                     <a href="{{url_for('delete_recipe', recipe_id = recipe._id)}}" class="btn nav-btn btn-primary">Delete
-                        <i  data-position="bottom" data-tooltip="Delete recipe"></i></a>    
-            </div>
+                    <i  data-position="bottom" data-tooltip="Delete recipe"></i></a>    
         </div>
     </div>
 </div>

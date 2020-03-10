@@ -110,19 +110,19 @@ def edit_recipe(recipe_id):
 def update_recipe(recipe_id):
     recipes.update( {'_id': ObjectId(recipe_id)},
         { 
-            '$set':{
-                'recipe_title':request.form.get('recipe_title'),
-                'recipe_description':request.form.get('recipe_description'),
-                'serves': request.form.get('serves'),
-                'food_type': request.form.get('food_type'),
-                'cuisine':request.form.get('cuisine'),
-                'calories':request.form.get('calories'),
-                'food_type':request.form.get('food_type'),
-                'cook_time':request.form.get('cook_time'),
-                'ingredients':request.form.getlist('ingredients'),
-                'steps':request.form.getlist('steps'),
-                'allergens':request.form.getlist('allergens'),
-                'upload_image':request.form.get('upload_image')
+            '$set' :{
+                'recipe_title' :request.form.get('recipe_title'),
+                'recipe_description' :request.form.get('recipe_description'),
+                'serves' : request.form.get('serves'),
+                'food_type' : request.form.get('food_type'),
+                'cuisine' :request.form.get('cuisine'),
+                'calories' :request.form.get('calories'),
+                'food_type' :request.form.get('food_type'),
+                'cook_time' :request.form.get('cook_time'),
+                'ingredients' :request.form.getlist('ingredients'),
+                'steps' :request.form.getlist('steps'),
+                'allergens' :request.form.getlist('allergens'),
+                'upload_image' :request.form.get('upload_image')
             }
         })
     return redirect(url_for('get_recipes'))
@@ -139,7 +139,7 @@ def the_recipe(recipe_id, recipe_title):
 @app.route('/delete_recipe/<recipe_id>')
 def delete_recipe(recipe_id):
     recipes.remove({'_id': ObjectId(recipe_id)})
-    return redirect(url_for('get_recipes')) 
+    return redirect(url_for('get_recipes'))
 
 
 if __name__ == '__main__':

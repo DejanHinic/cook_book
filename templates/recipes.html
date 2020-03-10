@@ -1,5 +1,9 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Recipes</title>
 {% extends 'base.html'%} {% block content %}
-        <!-- <section id="cover">
+        <!-- this will be implemented later
+        <section id="cover">
             <div id="cover-caption">
                 <div class="container">
                     <div class="col m12" id="info-form">  
@@ -16,7 +20,7 @@
             </div>
         </section>      -->
         <div class="container">
-            <div class="row">
+            <div class="row" id="recipes_pallete">
             {% for recipe in recipes %}
                 <div class="col s12 m6 l6 xl4 ">
                     <div class="card text-center">
@@ -53,7 +57,8 @@
             {% endfor %}
             </div>
         </div>
-<ul class="pagination">
+        <!-- will be implemented in future -->
+<!-- <ul class="pagination">
                 {% for page_number in pages %} {% if page_number == current_page %}
                 <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
                 <li class="active"><a href="#!">{{ page_number }}</a></li>
@@ -61,5 +66,5 @@
                 <li class="waves-effect">><a href="{{ url_for('recipes', current_page=page_number) }}" class="btn btn-primary paginate">{{ page_number }}</a></li>
                 <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
                 {% endif %} {% endfor %}
-</ul>                 
+</ul>                  -->
 {% endblock %}

@@ -1,3 +1,6 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Homepage</title>
 {% extends 'base.html'%} {% block content %}
     <div class="container">
     <div class="jumbotron" id="jumbo-top-margin"> 
@@ -5,12 +8,12 @@
             <div class="col-md-6 col-offset-6" id="login-jumbo">
                     <form method= "POST" action="{{ url_for('login') }}">
                         <div class="form-group">
-                            <label for="password"></label>
-                            <input type="text" class="form-control" name="username" placeholder="Username">
+                            <label for="name"></label>
+                            <input type="text" class="form-control" id="name" name="username" placeholder="Username">
                         </div>
                         <div class="form-group">
                             <label for="pass"></label>
-                            <input type="password" class="form-control" name="password" placeholder="Password">
+                            <input type="password" id="pass" class="form-control" name="password" placeholder="Password">
                         </div>
                         <button type="submit" class="btn btn-primary btn-block">Log In</button>
                     </form>
@@ -25,7 +28,7 @@
     <div class="container">
             <div class="jumbotron" id="#jumbo-edit-add-margin"> 
                 <div class="row" id="add_recipe_title">
-                    <div class="col-md-6 col-offset-6" id="login-jumbo">
+                    <div class="col-md-6 col-offset-6" id="login-jumbo2">
                         <h3>Kitchen Tools</h3>
                     </div>
                 </div>
@@ -37,7 +40,7 @@
                 <div class="col 3">
                     <div class="card" id="cookware" style="height: 23rem;">
                         <div class="card-image waves-effect waves-block waves-light" style="height: 23rem;">
-                        <img class="activator" src="static/images/cooperpans2.jpg/">
+                        <img class="activator" alt="pic" src="static/images/cooperpans2.jpg/">
                         </div>
                         <div class="card-content">
                         <span class="card-title activator grey-text text-darken-4">Kitchen Cookware<i class="material-icons right">more_vert</i></span>
@@ -53,7 +56,7 @@
                 <div class="col 3">    
                     <div class="card" id="knives" style="height: 23rem;">
                         <div class="card-image waves-effect waves-block waves-light" style="height: 23rem;">
-                        <img class="activator" src="static/images/knives.jpg/">
+                        <img class="activator" alt="pic" src="static/images/knives.jpg/">
                         </div>
                         <div class="card-content">
                         <span class="card-title activator grey-text text-darken-4">Kitchen Knives<i class="material-icons right">more_vert</i></span>
@@ -71,7 +74,7 @@
                 <div class="col 3">    
                     <div class="card" id="appliances" style="height: 23rem;">
                         <div class="card-image waves-effect waves-block waves-light" style="height: 23rem;">
-                        <img class="activator" src="static/images/kitchenware.jpg/">
+                        <img class="activator" alt="pic" src="static/images/kitchenware.jpg/">
                         </div>
                         <div class="card-content">
                         <span class="card-title activator grey-text text-darken-4">Kitchen Appliances<i class="material-icons right">more_vert</i></span>

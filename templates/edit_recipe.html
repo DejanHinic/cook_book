@@ -1,3 +1,6 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Edit Recipe</title>
 {% extends 'base.html'%} {% block content %}
 <div class="container" id="add_recipe_main">   
         <div class="jumbotron" id="#jumbo-edit-add-margin"> 
@@ -61,7 +64,7 @@
             <!-- calories details -->
                 <div class="input-field col s6">
                     <i class="small material-icons prefix">whatshot</i>
-                    <input placeholder="1234 cals" id="calories" type="text" name="calories"value="{{recipe.calories}}">
+                    <input placeholder="1234 cals" id="calories" type="text" name="calories" value="{{recipe.calories}}">
                     <label for="calories">Calories</label>
                 </div>
             </div>
@@ -78,21 +81,7 @@
                                 <option value="{{ item }}">{{ item }}</option>
                                 {% endif %}
                                 {% endfor %}
-                                <!-- <option value="gluten">Gluten</option>
-                                <option value="crustaceans">Crustaceans</option>
-                                <option value="Eggs">Eggs</option>
-                                <option value="Fish">Fish</option>
-                                <option value="Peanuts">Peanuts</option>
-                                <option value="Soybeans">Soybeans</option>
-                                <option value="Milk">Milk</option>
-                                <option value="Nuts">Nuts</option>
-                                <option value="Celery">Celery</option>
-                                <option value="Mustard">Mustard</option>
-                                <option value="Sesame seeds">Sesame seeds</option>
-                                <option value="Sulphur dioxide and sulphites">Sulphur dioxide and sulphites</option>
-                                <option value="Lupin">Lupin</option>
-                                <option value="Molluscs">Molluscs</option> -->
-                                <label for="allergens">Allergens</label>
+                                <label for="allergens">Allergens</label>        
                 </div>
             <!-- upload img -->
                 <div class="input-field col s6">
@@ -105,7 +94,7 @@
                 <div class="row">
                     <div class="col s12 flow-text">Steps</div>
                 </div>
-                    <div id="steps">
+                    <div id="recipe_steps">
                     {% for item in recipe.steps %}
                     <div class="row">
                         <div class="input-field col s10">
@@ -128,8 +117,8 @@
                 <div class="row">  
                         <div class="input-field col s10">
                             <i class="small material-icons prefix">shopping_basket</i>
-                            <input type="text" name="ingredients" id="ingredients" class="validate" value="{{item}}" required>
-                            <label for="ingredients">Ingredients</label>
+                            <input type="text" name="add_ingredients" id="recipe_ingredients" class="validate" value="{{item}}" required>
+                            <label for="recipe_ingredients">Ingredients</label>
                         </div>
                         <div class="input-field col s2">
                             <a class="btn-floating btn-small waves-effect waves-light red" id="add_ingredient"><i class="material-icons">add</i></a>     
