@@ -106,6 +106,18 @@ Validator has indicated that there are two unknown / undefined variables, namely
 
 Four unused variable was flagged `Materialize`. The warning was ignored as these functions are activated by onlclick event.
 
+#### Python
+
+All routes runned in deboug mode are returning the code 200
+
+27.0.0.1 - - [10/Mar/2020 02:31:27] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [10/Mar/2020 02:31:34] "GET /get_recipes HTTP/1.1" 200 -
+127.0.0.1 - - [10/Mar/2020 02:32:35] "GET /the_recipe/5e3b6265dc8ba319a66833bd/Shepherd%27s%20Pie HTTP/1.1" 200 -
+127.0.0.1 - - [10/Mar/2020 02:32:37] "GET /edit_recipe/5e3b6265dc8ba319a66833bd HTTP/1.1" 200 -
+127.0.0.1 - - [10/Mar/2020 02:32:45] "GET /add_recipe HTTP/1.1" 200 -
+127.0.0.1 - - [10/Mar/2020 02:32:48] "GET /register HTTP/1.1" 200 -
+127.0.0.1 - - [10/Mar/2020 02:32:51] "GET / HTTP/1.1" 200 -
+
 ### Features testing
 
 All the features were tested manually throughout the application development process. Table below outlines all features and tests performed on them, as well as all resolved and remaining bugs associated with tested features.
